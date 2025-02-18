@@ -1,0 +1,33 @@
+/* Estilo dos campos de input */
+input[type="email"], 
+input[type="password"], 
+input[type="tel"], 
+input[type="text"],
+input[type="number"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    transition: all 0.3s ease; /* Adicionando transição suave */
+}
+
+/* Brilho azul nos inputs quando selecionados (foco), se não tiver erro */
+input:focus:not(.error) {
+    border-color: #0056d2;
+    box-shadow: 0 0 5px rgba(0, 86, 210, 0.7); /* Brilho azul ao focar no campo */
+}
+
+/* Brilho vermelho nos inputs quando o campo tem erro */
+input.error:focus {
+    border-color: #d32f2f; /* Cor vermelha na borda */
+    box-shadow: 0 0 5px rgba(211, 47, 47, 0.7); /* Brilho vermelho ao focar no campo */
+}
+
+/* Se o campo tiver a classe 'error', mas não estiver em foco, a borda e o brilho continuam vermelhos */
+input.error {
+    border-color: #d32f2f; /* Cor vermelha na borda */
+    box-shadow: 0 0 5px rgba(211, 47, 47, 0.7); /* Brilho vermelho ao ter erro */
+}

@@ -1,0 +1,515 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: linear-gradient(to bottom right, #000000, #1c1681);
+}
+
+.containerb {
+    width: 100%;
+    max-width: 1200px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    transform: scale(0.9);
+    border: 5px solid #add8e6 !important; /* Borda azul claro */
+    box-shadow: 0 0 10px 5px rgba(173, 216, 230, 0.7) !important; /* Sombreamento azul claro */
+}
+
+.course-card {
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 35px 15px 15px;
+    min-height: 400px;
+    flex: 1 1 calc(33% - 20px);
+    position: relative;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 5px solid transparent; /* Define a borda com 5px e transparente inicialmente */
+    border-image: linear-gradient(to bottom, #8e44ad, #3498db) 1; /* Aplica o gradiente na borda */
+}
+
+.course-card:hover {
+    transform: scale(1.05); /* Aplica o efeito de aumento apenas no hover */
+}
+
+.course-card.active {
+    transform: scale(1.05); /* Amplia o card quando ele está ativo */
+}
+
+.course-card input[type="checkbox"]:checked + .select-button-container label {
+    background-color: rgb(88, 56, 250);
+    border: 2px solid rgb(88, 56, 250);
+    transition: border 0.3s ease;
+}
+
+.course-card input[type="checkbox"]:checked ~ .course-title {
+    font-weight: bold;
+}
+
+.course-card .select-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px; /* Ajuste conforme necessário para afastar o botão */
+    z-index: 2;
+}
+
+.course-card label {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.course-card input[type="checkbox"]:checked + label {
+    background-color: rgb(88, 56, 250);
+}
+
+.course-card label:hover {
+    background-color: rgb(88, 56, 250);
+    transform: none; /* Impede que o tamanho aumente */
+}
+
+.course-title {
+    font-size: 2em; /* Aumenta o tamanho do título */
+    color: #333;
+    padding: 10px;
+    font-weight: bold;
+    position: relative;
+    top: 0px; /* Ajusta a posição para empurrar o título para baixo */
+    text-align: left; /* Alinha o título à esquerda */
+    text-shadow: 2px 2px 8px rgba(128, 0, 128, 0.7); /* Sombramento roxo */
+    padding-left: 10px; /* Adiciona espaço à esquerda para a linha */
+}
+
+.badge-discount {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgb(88, 56, 250);
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    z-index: 2;
+}
+
+.badge {
+  text-align: left; /* Alinha o texto à esquerda */
+  display: inline-block; /* Ajusta a largura ao conteúdo */
+  padding: 5px 10px; /* Adiciona espaçamento interno */
+  font-size: 0.9rem; /* Aumenta a legibilidade */
+  vertical-align: middle; /* Centraliza verticalmente */
+  background-color: rgb(130, 106, 251); /* Fundo roxo */
+  color: #fff; /* Texto branco */
+  border-radius: 8px; /* Bordas arredondadas */
+  margin: 0; /* Remove margens extras */
+  max-width: fit-content; /* Garante que o fundo acompanhe o texto */
+}
+
+.features {
+  padding-top: 10px; /* Adiciona espaçamento acima da lista para separar da badge */
+}
+
+.details-list li,
+.extra-info .details-list li {
+    position: relative;
+    padding-left: 25px;
+}
+
+.details-list li::before,
+.extra-info .details-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #707070;
+}
+
+.features,
+.details-list {
+    list-style: none;
+    font-size: 0.9rem;
+    color: #707070;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+.features li,
+.details-list li {
+    margin-bottom: 5px;
+}
+
+.features li:not(.discipline) {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.features .discipline {
+    list-style-type: none;
+    background-color: #f0f0f0;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.features .discipline:hover {
+    background-color: #e0e0e0;
+}
+
+.price-section {
+    margin: 15px 0;
+    text-align: center; /* Centraliza os preços */
+}
+
+.price-section s {
+    color: #bbb;
+    font-size: 1rem; /* Aumenta o tamanho da fonte */
+}
+
+.price-section .price {
+    color: rgb(88, 56, 250);
+    font-size: 1.5rem; /* Aumenta o tamanho da fonte */
+    font-weight: bold;
+}
+
+.button {
+    background-color: rgb(130, 106, 251);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.button:hover {
+    background: rgb(88, 56, 250);
+}
+
+.details-list p {
+    text-align: justify;
+}
+
+.details-list h3 {
+    border-left: 5px solid #007bff;
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+
+.toggle-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+
+.toggle-button:hover {
+    background-color: #0056b3;
+}
+
+.toggle-button:focus {
+    outline: none;
+}
+
+.extra-info {
+    display: none;
+    margin-top: 15px;
+}
+
+#proceed-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 30px;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#proceed-button:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
+
+.focus-container {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.focus-section {
+    width: 45%;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.focus-section h2 {
+    text-align: center;
+    color: rgb(88, 56, 250);
+    margin-bottom: 20px;
+}
+
+.monitor-name {
+    display: none;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+    font-weight: normal;
+}
+
+.features .discipline {
+    cursor: pointer;
+}
+
+.features .discipline:hover {
+    text-decoration: underline;
+}
+
+.text-container {
+  text-align: center; /* Centraliza todo o conteúdo */
+  display: inline-block; /* Garante que o container se ajuste ao conteúdo */
+}
+
+.text-container h1 {
+  display: inline-block; /* Define o tamanho do h1 como referência */
+  text-align: center;
+  text-shadow: 2px 2px rgba(206, 169, 255, 0.7); /* Sombramento roxo */
+}
+
+.text-container h4 {
+  display: inline-block; /* Segue a largura do h1 */
+  max-width: 100%; /* Garante que o texto não ultrapasse a largura do h1 */
+  text-align: justify; /* Alinha o texto do h4 como justificado */
+  margin: 10px auto 0; /* Espaço entre o h1 e o h4 */
+}
+
+.header-text {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centraliza o texto */
+    gap: 20px; /* Espaço entre a logo e os textos */
+    margin-bottom: 20px;
+    width: 100%;
+    position: relative;
+}
+
+.header-text .logo {
+    position: absolute;
+    top: 20px; /* Move a logo para o topo */
+    left: 20px; /* Move a logo para o canto esquerdo */
+}
+
+/* Botão para voltar ao index.html */
+.back-button {
+  display: block; /* Garante que o botão ocupe uma linha */
+  margin: 20px auto 0; /* Centraliza horizontalmente e ajusta margem superior */
+  padding: 10px 20px;
+  background-color: rgb(88, 56, 250); /* Cor de fundo roxa */
+  color: #fff; /* Cor do texto branco */
+  text-decoration: none; /* Remove o sublinhado */
+  border: none;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-size: 16px;
+  text-align: center;
+}
+
+.back-button:hover {
+  background-color: #45a049; /* Cor verde no hover */
+  transform: scale(1.1); /* Efeito de escala */
+}
+
+/* Ajusta o fundo de "Consultorias Personalizadas de Redação" para acompanhar apenas o texto */
+.badge {
+  text-align: left; /* Alinha o texto à esquerda */
+  display: inline-block; /* Ajusta a largura ao conteúdo */
+  padding: 5px 10px; /* Adiciona espaçamento interno */
+  font-size: 0.9rem; /* Aumenta a legibilidade */
+  vertical-align: middle; /* Centraliza verticalmente */
+  background-color: rgb(130, 106, 251); /* Fundo roxo */
+  color: #fff; /* Texto branco */
+  border-radius: 8px; /* Bordas arredondadas */
+  margin: 0; /* Remove margens extras */
+  max-width: fit-content; /* Garante que o fundo acompanhe o texto */
+}
+
+#proceed-button {
+  background: linear-gradient(to bottom, #FFD700, #FFB800, #D4AF37); /* Gradiente dourado */
+  display: flex; /* Centraliza o texto dentro do botão */
+  align-items: center; /* Alinha verticalmente */
+  justify-content: center; /* Alinha horizontalmente */
+  padding: 15px 30px; /* Define o mesmo padding */
+  color: #fff; /* Texto branco */
+  text-decoration: none; /* Remove o sublinhado */
+  border: none; /* Remove borda padrão */
+  border-radius: 50px; /* Bordas arredondadas */
+  text-align: center; /* Centraliza o texto */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombreamento */
+  font-size: 16px; /* Tamanho da fonte uniforme */
+  width: 200px; /* Define largura fixa para ambos os botões */
+  height: 50px; /* Define altura fixa para ambos os botões */
+  transition: background 0.3s ease, transform 0.3s ease; /* Efeito ao passar o mouse */
+  position: relative; /* Mantém os botões dentro do fluxo da div */
+  margin-top: 20px; /* Espaçamento entre os botões e o conteúdo acima */
+}
+
+/* Ajusta os botões para terem o mesmo tamanho */
+.back-button {
+    display: flex; /* Centraliza o texto dentro do botão */
+    align-items: center; /* Alinha verticalmente */
+    justify-content: center; /* Alinha horizontalmente */
+    padding: 15px 30px; /* Define o mesmo padding */
+    background-color: rgb(88, 56, 250); /* Fundo roxo */
+    color: #fff; /* Texto branco */
+    text-decoration: none; /* Remove o sublinhado */
+    border: none; /* Remove borda padrão */
+    border-radius: 50px; /* Bordas arredondadas */
+    text-align: center; /* Centraliza o texto */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombreamento */
+    font-size: 16px; /* Tamanho da fonte uniforme */
+    width: 200px; /* Define largura fixa para ambos os botões */
+    height: 50px; /* Define altura fixa para ambos os botões */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Efeito ao passar o mouse */
+    position: relative; /* Mantém os botões dentro do fluxo da div */
+    margin-top: 20px; /* Espaçamento entre os botões e o conteúdo acima */
+}
+
+/* Posiciona os botões no fundo da div containerb */
+.containerb {
+    position: relative; /* Permite posicionar elementos filhos relativos ao container */
+    padding-bottom: 100px; /* Espaço extra para os botões no fundo */
+}
+
+.back-button {
+    position: absolute;
+    bottom: 20px; /* Posiciona no fundo da containerb */
+    left: 20px; /* Canto esquerdo */
+}
+
+#proceed-button {
+    position: absolute;
+    bottom: 20px; /* Posiciona no fundo da containerb */
+    right: 20px; /* Canto direito */
+}
+
+/* Efeito de hover para ambos os botões */
+.back-button:hover {
+    background-color: #45a049; /* Cor verde no hover */
+    transform: scale(1.1); /* Efeito de aumento ao passar o mouse */
+}
+
+#proceed-button:hover {
+  transform: scale(1.1); /* Aumenta o tamanho no hover */
+  background: linear-gradient(to bottom, #FFB800, #FFD700, #FFB800); /* Gradiente invertido */
+}
+
+
+/* Ajusta a visibilidade e alinhamento dinâmico */
+@media (max-width: 728px) {
+    .back-button {
+        position: static; /* Remove posição absoluta no mobile */
+        margin: 20px 0; /* Espaçamento adicional */
+    }
+
+    #proceed-button {
+        position: static; /* Remove posição absoluta no mobile */
+        margin: 10px 0; /* Espaçamento adicional */
+    }
+
+    .containerb {
+        display: flex;
+        flex-direction: column; /* Alinha os botões em coluna */
+        align-items: center; /* Centraliza os botões */
+        padding-bottom: 40px; /* Reduz espaço extra no fundo no mobile */
+    }
+}
+
+@media (max-width: 728px) {
+  .course-card {
+    flex: 1 1 calc(50% - 20px);
+  }
+
+  .header-text {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .header-text .logo {
+      position: static; /* Remove o posicionamento absoluto */
+      margin-bottom: 10px; /* Espaço entre a logo e o título no mobile */
+  }
+
+  h1, h4 {
+      margin-left: 0;
+      margin-right: 0;
+      text-align: center;
+  }
+
+  h1 {
+      margin-top: 10px; /* Espaço entre a logo e o h1 */
+  }
+
+  .header-text .logo {
+      margin-bottom: 10px;
+  }
+
+  h1, h4 {
+      margin-left: 0;
+      margin-right: 0;
+      text-align: center;
+  }
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/questão.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+  <nav id="sidebar">
+    <img src="imagens/LOGO-S.jpg" alt="Estude+" class="logotipo">
+    <ul>
+      <li>
+        <span class="logo">Estude+</span>
+        <button type="button" title="Menu" onclick=toggleSidebar() id="toggle-btn">
+          <i class="bi bi-chevron-double-left"></i>
+        </button>
+      </li>
+      <li>
+        <a href="index1.html" class="alinhar">
+          <i class="bi bi-house"></i>
+          <span>Inicio</span>
+        </a>
+      </li>
+      
+      <li class="active">
+        <a href="Questão.html">
+          <i class="bi bi-question-circle"></i>
+          <span>Caderno de Questão</span>
+          
+        </a>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          <i class="bi bi-person"></i>
+          <span>Area do Aluno</span>
+          <i class="bi bi-chevron-down"></i>
+
+        </button>
+        <ul class="sub-menu">
+          <li><a href="Suporte.html">Suporte</a></li>
+          <li><a href="Configurações.html">Configurações</a></li>
+        </ul>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          
+          <i class="bi bi-book"></i>
+          <span>Materias</span>
+          
+          <i class="bi bi-chevron-down"></i>
+        </button>
+        <ul class="sub-menu">
+          <li><a href="materias.html">Natureza</a></li>
+          <li><a href="materias.html">Linguagem</a></li>
+          <li><a href="materias.html">Matematica</a></li>
+          <li><a href="materias.html">Humanas</a></li>
+      </ul>
+      </li>
+      <li>
+        <a href="calendario.html">
+          <i class="bi bi-calendar3"></i>
+          <span>Calendario</span>
+        </a>
+      </li>
+      <li>
+        <a href="redações.HTML">
+          <i class="bi bi-file-earmark"></i>
+          <span>Redação</span>
+        </a>
+      </li>
+      <li class="dark-mode-toggle">
+        <button id="dark-mode-toggle" title="Modo Escuro">
+          <i class="bi bi-moon"></i> 
+          <span>Modo Escuro</span>
+        </button>
+      </li>
+      <li class="loggout">
+        <a href="../index.html">
+          <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </i>
+        </a>
+      </li>
+
+
+      <li class="logout">
+        <a href="../index.html">
+          <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+
+<main id="main">
+<H1>Caderno de Questão</H1>
+    <div class="layout-container">
+      <!-- Primeira Seção -->
+      <div class="category-section">
+        <h2 class="category-title"><a href="filtro.html">Filtro de questões</a></h2>
+        <div class="subject-grid">
+        <div class="subject-card">
+          <span>Natureza</span>
+          <span class="subject-icon">🌿🌎🌊🌟</span>
+        </div>
+        <div class="subject-card">
+          <span>Humanas</span>
+          <span class="subject-icon">📜🧠🏛️📚</span>
+        </div>
+        <div class="subject-card">
+          <span>Matematica</span>
+          <span class="subject-icon">➗📐➕📊</span>
+        </div>
+        <div class="subject-card">
+          <span>Linguagem</span>
+          <span class="subject-icon">🔤✍️📖🗨️</span>
+        </div>
+      </div>
+    </div>
+    
+  
+      <!-- Segunda Seção -->
+      <div id="Prova" class="category-section">
+        <h2 class="category-title"><a href="simulados.html">Prova</a></h2>
+        <div class="subject-grid">
+        <div class="subject-card">
+          <span>Enem</span>
+          <span class="subject-icon">🌿📐✍️📖</span>
+        </div>
+        
+        <div class="subject-card">
+          <span>Simulados</span>
+          <span class="subject-icon">📜➗🧠🗨️</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </main>
+
+  
+  <script src="JS/questão.js"></script>
+  
+  <script type="text/javascript" src="JS/app.js"></script>
+</body>
+</html>

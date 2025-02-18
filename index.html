@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--LINK CSS SWIPER-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="site/css/estude+.css">
+    <title>Estude+</title>
+</head>
+
+<body>
+    <header>
+        <nav class="nav-bar">
+            <div class="logo">
+                <h1>Estude+</h1>
+            </div>
+            <div class="nav-list">
+                <ul>
+                    <li class="nav-item">
+                        <a href="#Cursos" class="nav-link">CURSOS</a>
+                        
+                    </li>
+                    <li class="nav-item"><a href="#Sobre" class="nav-link">SOBRE</a></li>
+                </ul>
+            </div>
+            <div class="login-button">
+                <button><a href="site/signatures.html"> ASSINE</a></button>
+                <button><a href="site/accounts.html">JÁ SOU ALUNO(A)</a></button>
+            </div>
+
+            <div class="mobile-menu-icon">
+                <button onclick="menuShow()" aria-label="Abrir Menu"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </nav>
+        <div class="mobile-menu">
+            <ul>
+                <li class="nav-item">
+                    <a href="#Cursos" class="nav-link">CURSOS</a>
+                  
+                </li>
+
+                <li class="nav-item"><a href="#Sobre" class="nav-link">SOBRE</a></li>
+            </ul>
+
+            <div class="login-button">
+                <button><a href="site/accounts.html">JÁ SOU ALUNO(A)</a></button>
+                <button><a href="site/signatures.html">ASSINE</a></button>
+            </div>
+        </div>
+        <div class="overlay">
+          <h3>Seu cursinho Pré-Vestibular</h3>
+        </div>
+
+        <section class="Topo-do-site">
+            <div class="interfacee">
+                <div class="flex">
+                    <div class="txt-topo-site">
+                        <h1>Seu Portal Completo para Preparação para o Enem e Vestibulares<span>.</span></h1>
+                        <p>Descubra a forma mais eficiente de aprender com os melhores professores e conquistar sua vaga nos Vestibulares e no Enem! A <i>Estude+</i> é uma plataforma inovadora, criada para levar você direto à aprovação, combinando ensino de qualidade, recursos modernos e suporte personalizado para potencializar seus resultados. 🚀</p>
+                        <div class="btn-contato">
+                            <a href="site/signatures.html">
+                                <button class="corbt">ASSINE</button>
+                            </a>
+                        </div>
+                    </div>
+        
+                    <div class="img-topo-site">
+                        <img src="site/imagens/IMGPRINCI.png" alt="Imagem do topo do site">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+  <div class="container-swiper" id="Sobre">
+    <h2>Sobre Nós</h2>
+    <h3 class="fun">Conheça os Fundadores</h3>
+    <div class="slider-wrapper">
+      <div class="card-list swiper-wrapper">
+        <div class="card-item swiper-slide">
+          <img decoding="async" src=" site/imagens/SAMANDA.jpeg" style="object-fit: contain; height: auto;" alt="User Image" class="user-image">
+          <h2 class="user-name">Samanda Rodrigues</h2>
+            <button class="message-button">Mensagem</button>
+            <p class="hidden-message" style="max-height: 200px; overflow-y: auto; margin-top: 10px;">"Minha área de atuação foi no desenvolvimento das páginas de produto, onde implementei recursos interativos e otimizei a apresentação dos produtos para melhorar a experiência do usuário."</p>
+        </div>
+
+        <div class="card-item swiper-slide">
+          <img decoding="async" src="site/imagens/LIGIA.jpg" alt="User Image" class="user-image">
+          <h2 class="user-name">Lígia Menezes</h2>
+            <button class="message-button">Mensagem</button>
+        </div>
+
+        <div class="card-item swiper-slide">
+          <img decoding="async" src="site/imagens/BIA.jpg" alt="User Image" class="user-image">
+          <h2 class="user-name">Ana Beatriz Cavalcante</h2>
+            <button class="message-button">Mensagem</button>
+            <p class="hidden-message" style="display: none; overflow-y: auto;"> "Fui encarregada de implementar as funcionalidades dos formulários de contato, garantindo a facilidade de envio de informações e a acessibilidade em todas as plataformas."</p>
+        </div>
+
+        <div class="card-item swiper-slide">
+          <img decoding="async" src="site/imagens/MARIA_FLOR.jpg" alt="User Image" class="user-image">
+          <h2 class="user-name">Maria Flor Mousinho</h2>
+            <button class="message-button">Mensagem</button>
+            <p class="hidden-message" style="display: none; overflow-y: auto;">"Atuei na criação de uma experiência otimizada para dispositivos móveis, adaptando o design para garantir uma navegação confortável e funcional em diferentes tamanhos de tela."</p>
+        </div>
+
+        <div class="card-item swiper-slide">
+          <img decoding="async" src="site/imagens/LAVINIA.jpg" alt="User Image" class="user-image">
+          <h2 class="user-name">Lavínia Tiffany Barreto</h2>
+            <button class="message-button">Mensagem</button>
+            <p class="hidden-message" style="display: none; overflow-y: auto;">"Fui responsável pelo design de experiência do usuário nas páginas de início, criando uma interface visualmente atrativa e fácil de navegar, garantindo uma boa primeira impressão aos visitantes."</p>
+        </div>
+
+        <div class="card-item swiper-slide">
+          <img decoding="async" src="site/imagens/TALITA.jpg" alt="User Image" class="user-image">
+          <h2 class="user-name">Talita da Silva</h2>
+            <button class="message-button">Mensagem</button>
+            <p class="hidden-message" style="display: none; overflow-y: auto;">"Meu foco foi no design das telas de contato e formulários, garantindo uma interação clara e intuitiva, facilitando a comunicação dos usuários com a empresa.".</p>
+        </div>
+
+        <div class="card-item swiper-slide">
+            <img decoding="async" src="site/imagens/GABI.jpg" alt="User Image" class="user-image">
+            <h2 class="user-name">Gabriela S. da Silva</h2>
+            <button class="message-button">Mensagem</button>
+            <p class="hidden-message" style="display: none; overflow-y: auto;"> "Fui responsável pelo design de experiência do usuário na área de navegação, criando um menu intuitivo e fácil de usar, promovendo uma navegação sem esforço pelo site."</p>
+        </div>
+      </div>
+
+      <div class="swiper-pagination"></div>
+      <div class="swiper-slide-button swiper-button-prev"></div>
+      <div class="swiper-slide-button swiper-button-next"></div>
+    </div>
+  </div>
+                  
+            
+                <div class="containerCHECK">
+                    <h1 class="title">O <span>Estude+</span> é para você que:</h1>
+                    <div class="cards">
+                        <div class="carde">
+                            <i class="fas fa-th-large icon"></i>
+                            <p>Precisa de mais <span class="highlight">organização e método</span> nos seus estudos.</p>
+                        </div>
+                        <div class="carde">
+                            <i class="fas fa-calendar-alt icon"></i>
+                            <p>Não consegue criar um bom <span class="highlight">planejamento de estudos</span>.</p>
+                        </div>
+                        <div class="carde">
+                            <i class="fas fa-check icon"></i>
+                            <p>Não sabe como organizar e fazer as <span class="highlight">revisões</span>.</p>
+                        </div>
+                        <div class="carde" id="card-4">
+                            <i class="fas fa-tasks icon"></i>
+                            <p>Anda desmotivado(a) e sem <span class="highlight">metas</span> claras para cumprir.</p>
+                        </div>
+                        <div class="carde" id="card-5">
+                            <i class="fas fa-clock icon"></i>
+                            <p>Quer <span class="highlight">controlar</span> as horas estudadas e otimizar seu tempo.</p>
+                        </div>
+                    </div>
+                    <div class="section-focus">
+                        <div class="image">
+                            <img src=" site/imagens/IMGPRINCI.png" alt="Ilustração do Estudei">
+                        </div>
+                        <div class="text">
+                            <h2>Foque <span>só</span> no que importa: <span>estudar</span>. <br> O <span>resto</span> cuidamos para você.</h2>
+                            <ul class="focus-list">
+                                <li><i class="fas fa-check"></i>Cria seu planejamento de forma automática</li>
+                                <li><i class="fas fa-check"></i>Controla suas revisões</li>
+                                <li><i class="fas fa-check"></i>Monitora suas metas e constâncias de estudo</li>
+                                <li><i class="fas fa-check"></i>Controla seu desempenho por assunto no edital verticalizado</li>
+                                <li><i class="fas fa-check"></i>Marca suas horas líquidas de estudo com cronômetro interativo</li>
+                                <li><i class="fas fa-check"></i>Controla seus simulados e provas</li>
+                                <li><i class="fas fa-check"></i>Gera relatórios de desempenho e estatísticas</li>
+                                <li class="red"><i class="fas fa-times"></i>A única coisa que não faz, é estudar por você</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="containerb" id="Cursos">
+            <h1 class="ti">Nossos Cursos para o Enem e Vestibulares</h1>
+            <h3>Inicie seu cursinho online para o Enem 2025 com ofertas exclusivas!</h3>
+        
+            <div class="my-slider">
+              <div class="container-cards">
+                <!-- Card 1 -->
+                <div class="course-card">
+                  <span class="badge-discount">50% OFF</span>
+                  <h2 class="course-title">Foco em Medicina</h2>
+                  <span class="badge">Redação</span>
+                        <ul class="features">
+                          <li onclick="toggleDetails(this)">Natureza<div class="details-box">Monitora Samanda Rodrigues</div></li>
+                          <li onclick="toggleDetails(this)">Linguagens<div class="details-box">Monitora Maria Flor Mousinho</div></li>
+                          <li onclick="toggleDetails(this)">Matemática<div class="details-box">Monitora Lígia Menezes</div></li>
+                          <li onclick="toggleDetails(this)">Humanas<div class="details-box">Monitora Lavínia Barreto</div></li>
+                        </ul>
+                        <ul class="details-list">
+                          <li>9 meses de acesso</li>
+                          <li>Conteúdo completo</li>
+                          <li>Flashcards</li>
+                          <li>Material didático completo</li>
+                          <li>04 correções de redação por mês</li>
+                          <li>Monitorias interativas</li>
+                          <li>Baterias de exercícios</li>
+                          <li>Simulados periódicos</li>
+                          <li>Banco de provas</li>
+                          
+                        </ul>
+                        <div class="offer-timer" id="timer-mega">
+                          <div>00 Horas</div>
+                          <div>00 Minutos</div>
+                          <div>00 Segundos</div>
+                        </div>
+                        <div class="price-section">
+                          De <s>9x R$ 89,90</s>
+                          <div class="price">9x de R$ 44,95</div>
+                        </div>
+                        <a href="site/signatures.html" class="button">COMECE AGORA</a>
+                      </div>
+        
+                <!-- Card 2 -->
+                 <div class="course-card">
+                        <span class="badge-discount">50% OFF</span>
+                        <h2 class="course-title">Focamos no Enem</h2>
+                        <span class="badge">Redação</span>
+                        <ul class="features">
+                          <li onclick="toggleDetails(this)">Natureza<div class="details-box">Monitora Samanda Rodrigues</div></li>
+                          <li onclick="toggleDetails(this)">Linguagens<div class="details-box">Monitora Ana Beatriz Cavalcante</div></li>
+                          <li onclick="toggleDetails(this)">Matemática<div class="details-box">Monitora Lígia Menezes</div></li>
+                          <li onclick="toggleDetails(this)">Humanas<div class="details-box">Monitora Lavínia Barreto</div></li>
+                        </ul>
+                        <ul class="details-list">
+                          <li>9 meses de acesso</li>
+                          <li>Conteúdo completo</li>
+                          <li>Flashcards</li>
+                          <li>Material didático completo</li>
+                          <li>02 correções de redação por mês</li>
+                          <li>Monitorias interativas</li>
+                          <li>Baterias de exercícios</li>
+                          <li>Simulados periódicos</li>
+                          <li>Banco de provas</li>
+                        </ul>
+                        <div class="offer-timer" id="timer-elementar">
+                          <div>00 Horas</div>
+                          <div>00 Minutos</div>
+                          <div>00 Segundos</div>
+                        </div>
+                        <div class="price-section">
+                          De <s>9x R$ 69,90</s>
+                          <div class="price">9x de R$ 34,95</div>
+                        </div>
+                        <a href="site/signatures.html" class="button">COMECE AGORA</a>
+                      </div>
+        
+                <!-- Card 3 -->
+                 <div class="course-card">
+                        <span class="badge-discount">50% OFF</span>
+                        <h2 class="course-title">Foco em Vestibulares</h2>
+                        <span class="badge">Redação</span>
+                        <ul class="features">
+                          <li onclick="toggleDetails(this)">Natureza<div class="details-box">Monitora Samanda Rodrigues</div></li>
+                          <li onclick="toggleDetails(this)">Linguagens<div class="details-box">Monitora Ana Beatriz Cavalcante</div></li>
+                          <li onclick="toggleDetails(this)">Matemática<div class="details-box">Monitora Lígia Menezes</div></li>
+                          <li onclick="toggleDetails(this)">Humanas<div class="details-box">Monitora Lavínia Barreto</div></li>
+                        </ul>
+                        <ul class="details-list">
+                          <li>8 meses de acesso</li>
+                          <li>Material didático completo</li>
+                          <li>Monitorias interativas</li>
+                          <li>Baterias de exercícios</li>
+                          <li>Simulados periódicos</li>
+                          <li>Banco de provas</li>
+                          <li>Flashcards</li>
+                          <li>Conteúdo completo</li>
+                          <li>Desafios semanais</li>
+                        </ul>
+                        <div class="offer-timer" id="timer-elementar">
+                          <div>00 Horas</div>
+                          <div>00 Minutos</div>
+                          <div>00 Segundos</div>
+                        </div>
+                        <div class="price-section">
+                          De <s>8x R$ 49,90</s>
+                          <div class="price">8x de R$ 24,95</div>
+                        </div>
+                        <a href="site/signatures.html" class="button">COMECE AGORA</a>
+                      </div>
+              </div>
+            </div>
+          </div>    
+        
+                            </article>
+                        </div>
+                    <section class="duvidas">
+                        <div class="containerMain">
+                            <h1>Perguntas Frequentes</h1>
+                            <div class="inicioDuvidas">
+                                <input type="checkbox" name="pergunta" id="pergunta-01">
+                                <label for="pergunta-01">
+                                    <h2>01</h2>
+                                    <h3>O que são e como funcionam as turmas?</h3>
+                                </label>
+                                <div class="content">
+                                    <p>As turmas têm matrículas abertas todos os meses. Elas são 100% focadas nos Vestibulares Tradicionais e na prova do ENEM e você pode se inscrever a qualquer momento para estudar com a gente. Todas as turmas do estude+ têm como maior foco fornecer aos alunos a melhor preparação para Medicina ou qualquer outro curso de seu interesse, como Engenharia, Odonto, Administração, Economia, etc. As turmas possuem todo o conteúdo de que você precisa para passar em qualquer vestibular. Contamos com os melhores materiais da internet, além de todas as disciplinas e correção de redação.</p>
+                                </div>
+                            </div>
+                    
+                            <div class="inicioDuvidas">
+                                <input type="checkbox" name="pergunta" id="pergunta-02">
+                                <label for="pergunta-02">
+                                    <h2>02</h2>
+                                    <h3>Quais os diferenciais da plataforma Estude+?</h3>
+                                </label>
+                                <div class="content">
+                                    <p>O nossos alunos se sentem seguros e confortáveis ao estudar com a gente, pois contamos com professores especializados e com o melhor conteúdo para passar em vestibulares e ENEM.</p>
+                                </div>
+                            </div>
+                    
+                            <div class="inicioDuvidas">
+                                <input type="checkbox" name="pergunta" id="pergunta-03">
+                                <label for="pergunta-03">
+                                    <h2>03</h2>
+                                    <h3> Quais são as formas de pagamento?</h3>
+                                </label>
+                                <div class="content">
+                                    <p>As formas de pagamento são: cartão de crédito, boleto bancário e PIX. Você pode parcelar em até 12x sem juros o seu plano ou pode optar por pagar à vista pelos outros meios de pagamento. No momento, não é possível parcelar o pagamento no boleto.</p>
+                                </div>
+                            </div>
+
+                            <div class="inicioDuvidas">
+                              <input type="checkbox" name="pergunta" id="pergunta-04">
+                              <label for="pergunta-04">
+                                  <h2>04</h2>
+                                  <h3> Há período específico para fazer inscrição?</h3>
+                              </label>
+                              <div class="content">
+                                  <p>Não. Você pode se inscriver na nossa plataforma há qualquer dia no horário que quiser! Teremos uma equipe pronta para te atender e estaremos sempre abertos para o seu contato.</p>
+                              </div>
+                          </div>
+                    </section>
+                    
+        <footer class="foooter">
+            <div class="social">
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="legal">
+                <p>&copy; 2024 Estude+. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+                    
+    </div>
+    </header>
+<!--=============== SWIPER JS ===============-->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="site/JS/estude+.js"></script>
+</body>
+
+
+</html>

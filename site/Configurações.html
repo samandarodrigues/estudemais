@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  
+  <style>
+
+
+    .container {
+      margin: 50px auto;
+      width: 900px;
+      background-color: #ffffff;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      max-width: 100%;
+      overflow: hidden;
+      border: 1px solid #e3e3e3;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      color: #333dff;
+      margin-bottom: 25px;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    p.instructions {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+
+    .section {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 35px;
+    }
+
+    .section-left,
+    .section-right {
+      flex: 1;
+      background-color: #ffffff;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .section-left:hover,
+    .section-right:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Avatar Section */
+    .section-left {
+      text-align: center;
+      border: 1px solid #e3e3e3;
+      padding: 30px;
+    }
+
+    .section-left h3 {
+      font-size: 1.4rem;
+      color: #333dff;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .avatar {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      border: 3px solid #333dff;
+      object-fit: cover;
+    }
+
+    .section-left p {
+      font-size: 0.95rem;
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      background-color: #333dff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      width: 100%;
+    }
+
+    .btn:hover {
+      background-color: #3030cc;
+    }
+
+    /* Dados Principais */
+    .section-right h3 {
+      font-size: 1.4rem;
+      color: #333dff;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group input[type="number"],
+    .form-group select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #333;
+      margin-top: 5px;
+      transition: border-color 0.3s ease-in-out;
+    }
+
+    .form-group input[type="text"]:focus,
+    .form-group input[type="email"]:focus,
+    .form-group input[type="number"]:focus,
+    .form-group select:focus {
+      border-color: #333dff;
+    }
+
+    .warning {
+      font-size: 0.9rem;
+      color: #999;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    .action-buttons {
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    .btn.save {
+      background-color: #4caf50;
+    }
+
+    .btn.save:hover {
+      background-color: #388e3c;
+    }
+
+    /* Dados Adicionais */
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      margin-bottom: 25px;
+    }
+
+    .form-group {
+      flex: 1;
+    }
+
+    .btn.save {
+      display: block;
+      margin-top: 20px;
+      width: 100%;
+      background-color: #333dff;
+    }
+
+    .btn.save:hover {
+      background-color: #3030cc;
+    }
+    .btnv{
+      padding: 12px 18px;
+      background-color: #333dff;
+      color: #fff;
+      border: none;
+      margin-top: 30px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+      width: 20%;
+      display: flex; 
+      justify-content: center;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    /* Modo Escuro */
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+/* Container principal no Modo Escuro */
+.dark-mode .container {
+  background-color: #1e1e1e;
+  border-color: #444;
+  box-shadow: 0 6px 15px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .section-left,.dark-mode .section-right {
+  background-color: #1e1e1e;
+  border-color: #444;
+}
+/* Títulos no Modo Escuro */
+.dark-mode h2, 
+.dark-mode .section-left h3, 
+.dark-mode .section-right h3 {
+  color: #8c9eff;
+}
+
+/* Parágrafos e textos informativos */
+.dark-mode p.instructions,
+.dark-mode .section-left p,
+.dark-mode .warning {
+  color: #ddd;
+}
+
+/* Avatar no Modo Escuro */
+.dark-mode .avatar {
+  border-color: #8c9eff;
+}
+.dark-mode .form-group label {
+  color: #fff;
+}
+/* Campos de entrada e seleções */
+.dark-mode .form-group input,
+.dark-mode .form-group select {
+  background-color: #2a2a2a;
+  border: 1px solid #555;
+  color: white;
+}
+
+.dark-mode .form-group input:focus,
+.dark-mode .form-group select:focus {
+  border-color: #8c9eff;
+}
+
+/* Botões no Modo Escuro */
+.dark-mode .btn {
+  background-color: #8c9eff;
+  color: #121212;
+}
+
+.dark-mode .btn:hover {
+  background-color: #536dfe;
+}
+
+/* Botão verde de salvar no Modo Escuro */
+.dark-mode .btn.save {
+  background-color: #66bb6a;
+}
+
+.dark-mode .btn.save:hover {
+  background-color: #388e3c;
+}
+
+/* Botão de voltar */
+.dark-mode .btnv {
+  background-color: #8c9eff;
+  color: #121212;
+}
+
+.dark-mode .btnv:hover {
+  background-color: #536dfe;
+}
+
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .section {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .form-row {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav id="sidebar">
+    <img src="imagens/LOGO-S.jpg" alt="Estude+" class="logotipo">
+    <ul>
+      <li>
+        <span class="logo">Estude+</span>
+        <button type="button" title="Menu" onclick=toggleSidebar() id="toggle-btn">
+          <i class="bi bi-chevron-double-left"></i>
+        </button>
+      </li>
+      <li>
+        <a href="index1.html" class="alinhar">
+          <i class="bi bi-house"></i>
+          <span>Inicio</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="Questão.html">
+          <i class="bi bi-question-circle"></i>
+          <span>Caderno de Questão</span>
+          
+        </a>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          <i class="bi bi-person"></i>
+          <span>Area do Aluno</span>
+          <i class="bi bi-chevron-down"></i>
+
+        </button>
+        <ul class="sub-menu">
+          <li><a href="Suporte.html">Suporte</a></li>
+          <li><a href="Configurações.html">Configurações</a></li>
+        </ul>
+      </li>
+      <li>
+        <button type="button" title="Menu" onclick=toggleSubMenu(this) class="dropdown-btn">
+          <i class="bi bi-book"></i>
+          <span>Materias</span>
+          <i class="bi bi-chevron-down"></i>
+        </button>
+        <ul class="sub-menu">
+            <li><a href="materias.html">Natureza</a></li>
+            <li><a href="materias.html">Linguagem</a></li>
+            <li><a href="materias.html">Matematica</a></li>
+            <li><a href="materias.html">Humanas</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="calendario.html">
+          <i class="bi bi-calendar3"></i>
+          <span>Calendario</span>
+        </a>
+      </li>
+      <li>
+        <a href="redações.HTML">
+          <i class="bi bi-file-earmark"></i>
+          <span>Redação</span>
+        </a>
+      </li>
+      <li class="dark-mode-toggle">
+        <button id="dark-mode-toggle" title="Modo Escuro">
+          <i class="bi bi-moon"></i> 
+          <span>Modo Escuro</span>
+        </button>
+      </li>
+      <li class="loggout">
+        <a href="../index.html">
+          <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </i>
+        </a>
+      </li>
+
+
+      <li class="logout">
+        <a href="../index.html">
+          <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container">
+    <h2>Configurações</h2>
+
+    <div class="section">
+      <!-- Avatar Section -->
+      <div class="section-left">
+        <h3>Avatar</h3>
+        <img id="avatar" src="https://w7.pngwing.com/pngs/193/660/png-transparent-computer-icons-woman-avatar-avatar-girl-thumbnail.png" alt="Avatar" class="avatar">
+        <p>JPG ou PNG com tamanho máximo de 2MB</p>
+        <label for="upload" class="btn">Substituir imagem atual</label>
+        <input type="file" id="upload" accept="image/png, image/jpeg" style="display: none;">
+    </div>
+    
+
+      <!-- Dados Principais -->
+      <div class="section-right">
+        <h3>Dados Principais</h3>
+        <form>
+          <div class="form-group">
+            <label for="first-name">Nome:</label>
+            <input type="text" id="first-name" value="" readonly>
+          </div>
+          
+          <div class="form-group">
+            <label for="last-name">Sobrenome:</label>
+            <input type="text" id="last-name" value="" readonly>
+          </div>          
+          <div class="form-group">
+            <label for="email-display">E-mail:</label>
+            <input type="email" id="email-display" value="" readonly>
+          </div>          
+          <p class="warning">
+            “Para sua segurança, e para evitar fraudes, seu e-mail não pode ser alterado, pois ele é vinculado à sua assinatura na Hotmart. 
+            Se alterado, seu acesso expirará na Plataforma e você não conseguirá acessar.”
+          </p>
+          <div class="action-buttons">
+            <button type="button" class="btn">Alterar senha</button>
+            <button type="submit" class="btn save">Salvar Alterações</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <h2>Dados Adicionais (opcional)</h2>
+    <p class="instructions">
+      O preenchimento destas informações nos ajuda a melhorar a forma com que preparamos o conteúdo para você, 
+      conhecendo melhor nosso público alvo e assim podemos desenvolver um conteúdo com foco nos futuros calouros que atendemos. 
+      Preencha todos os campos que se sentir à vontade em compartilhar conosco, <strong>nenhum é obrigatório</strong>.
+    </p>
+    <form>
+      <div class="form-row">
+        <div class="form-group">
+            <label for="estado">Estado:</label>
+            <select id="estado" onchange="carregarCidades()">
+                <option value="">Selecione o estado onde mora</option>
+                <option value="acre">Acre</option>
+                <option value="alagoas">Alagoas</option>
+                <option value="amapa">Amapá</option>
+                <option value="amazonas">Amazonas</option>
+                <option value="bahia">Bahia</option>
+                <option value="ceara">Ceará</option>
+                <option value="distrito-federal">Distrito Federal</option>
+                <option value="espirito-santo">Espírito Santo</option>
+                <option value="goias">Goiás</option>
+                <option value="maranhao">Maranhão</option>
+                <option value="mato-grosso">Mato Grosso</option>
+                <option value="mato-grosso-do-sul">Mato Grosso do Sul</option>
+                <option value="minas-gerais">Minas Gerais</option>
+                <option value="para">Pará</option>
+                <option value="paraiba">Paraíba</option>
+                <option value="parana">Paraná</option>
+                <option value="pernambuco">Pernambuco</option>
+                <option value="piaui">Piauí</option>
+                <option value="rio-de-janeiro">Rio de Janeiro</option>
+                <option value="rio-grande-do-norte">Rio Grande do Norte</option>
+                <option value="rio-grande-do-sul">Rio Grande do Sul</option>
+                <option value="rondonia">Rondônia</option>
+                <option value="roraima">Roraima</option>
+                <option value="santa-catarina">Santa Catarina</option>
+                <option value="sao-paulo">São Paulo</option>
+                <option value="sergipe">Sergipe</option>
+                <option value="tocantins">Tocantins</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="cidade">Cidade:</label>
+            <select id="cidade">
+                <option value="">Selecione a cidade</option>
+            </select>
+        </div>   
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="idade">Idade:</label>
+          <input type="number" id="idade" placeholder="Idade">
+        </div>
+        <div class="form-group">
+          <label for="escola">Escola:</label>
+          <input type="text" id="escola" placeholder="Escola">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="curso">Curso que deseja:</label>
+          <input type="text" id="curso" placeholder="Curso que você será calouro">
+        </div>
+        <div class="form-group">
+          <label for="area">Área de interesse:</label>
+          <select id="area">
+            <option value="">Selecione sua área de interesse</option>
+            <option value="saude">Saúde</option>
+            <option value="exatas">Exatas</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn save">Salvar Dados</button>
+    </form>
+  <a href="index1.html" class="btnv">Voltar</a>
+  </div>
+
+  <script src="JS/app.js"></script>
+</body>
+</html>

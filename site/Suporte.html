@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+<style>
+/* Cabeçalho */
+.header {
+      background: linear-gradient(135deg,#333dff,white);
+      position: relative;
+      padding: 30px 0;
+      text-align: center;
+      color: white;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .header input {
+      margin-top: 20px;
+      padding: 15px;
+      width: 70%;
+      max-width: 600px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+    }
+
+    .header .astronaut {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 200px;
+      background: url('https://via.placeholder.com/200') no-repeat center;
+      background-size: contain;
+    }
+
+    /* Botões de categorias */
+    .buttons-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 30px auto;
+      padding: 20px;
+      max-width: 1000px;
+    }
+
+    .buttons-section button {
+      background-color: white;
+      border: 2px solid #333dff;
+      color: #333dff;
+      border-radius: 10px;
+      padding: 15px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .buttons-section button:hover {
+      background-color: #333dff;
+      color: white;
+    }
+
+    /* Área de Atividade Recente */
+    .recent-activity {
+      margin: 20px auto;
+      padding: 20px;
+      max-width: 800px;
+
+    }
+
+    .recent-activity h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: #000;
+      text-align: center;
+    }
+
+    .activity-item {
+      background-color: white;
+      border: 1px solid #000;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+    }
+
+    .activity-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: #000;
+    }
+
+    .activity-item p {
+      color: #000;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .activity-item span {
+      font-size: 0.9rem;
+      color: #000;
+    }
+
+
+    /* Modo Escuro */
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+/* Cabeçalho no Modo Escuro */
+.dark-mode .header {
+  background: linear-gradient(135deg,#333dff,#222);
+  color: white;
+}
+
+.dark-mode .header input {
+  background-color: #222;
+  color: white;
+  border: 1px solid #666;
+}
+
+/* Botões no Modo Escuro */
+.dark-mode .buttons-section button {
+  background-color: #222;
+  border-color: white;
+  color: white;
+}
+
+.dark-mode .buttons-section button:hover {
+  background-color: white;
+  color: #222;
+}
+
+/* Atividade Recente no Modo Escuro */
+.dark-mode .recent-activity h2 {
+  color: white;
+}
+
+.dark-mode .activity-item {
+  background-color: #1e1e1e;
+  border-color: #666;
+}
+
+.dark-mode .activity-item h3,
+.dark-mode .activity-item p,
+.dark-mode .activity-item span {
+  color: white;
+}
+
+/* Astronauta no Modo Escuro */
+.dark-mode .header .astronaut {
+  filter: brightness(0.8);
+}
+
+</style>
+
+
+</head>
+<body>
+  <nav id="sidebar">
+    <img src="imagens/LOGO-S.jpg" alt="Estude+" class="logotipo">
+    <ul>
+      <li>
+        <span class="logo">Estude+</span>
+        <button type="button" title="Menu" onclick=toggleSidebar() id="toggle-btn">
+          <i class="bi bi-chevron-double-left"></i>
+        </button>
+      </li>
+      <li>
+        <a href="index1.html" class="alinhar">
+          <i class="bi bi-house"></i>
+          <span>Inicio</span>
+        </a>
+      </li>
+      
+      <li class="active">
+        <a href="Questão.html">
+          <i class="bi bi-question-circle"></i>
+          <span>Caderno de Questão</span>
+          
+        </a>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          <i class="bi bi-person"></i>
+          <span>Area do Aluno</span>
+          <i class="bi bi-chevron-down"></i>
+
+        </button>
+        <ul class="sub-menu">
+          <li><a href="Suporte.html">Suporte</a></li>
+          <li><a href="Configurações.html">Configurações</a></li>
+        </ul>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          
+            <i class="bi bi-book"></i>
+            <span>Materias</span>
+          
+          <i class="bi bi-chevron-down"></i>
+        </button>
+        <ul class="sub-menu">
+          <li><a href="materias.html">Natureza</a></li>
+          <li><a href="materias.html">Linguagem</a></li>
+          <li><a href="materias.html">Matematica</a></li>
+          <li><a href="materias.html">Humanas</a></li>
+      </ul>
+      </li>
+      <li>
+        <a href="calendario.html">
+          <i class="bi bi-calendar3"></i>
+          <span>Calendario</span>
+        </a>
+      </li>
+      <li>
+        <a href="redações.HTML">
+          <i class="bi bi-file-earmark"></i>
+          <span>Redação</span>
+        </a>
+      </li>
+      <li class="dark-mode-toggle">
+        <button id="dark-mode-toggle" title="Modo Escuro">
+          <i class="bi bi-moon"></i> 
+          <span>Modo Escuro</span>
+        </button>
+      </li>
+      <li class="loggout">
+        <a href="../index.html">
+          <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </i>
+        </a>
+      </li>
+
+
+      <li class="logout">
+        <a href="../index.html">
+          <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <main id="main">
+  <!-- Cabeçalho -->
+  <header class="header">
+    <h1>Precisa de ajuda?</h1>
+    <input type="text" id="searchBar" placeholder="🔍 Pesquisa">
+    <div class="astronaut"></div>
+  </header>
+
+  <!-- Botões de categorias -->
+  <section class="buttons-section">
+    <a href="acessologsenh.HTML"><button title="Acessos, Logins e Senhas" type="button">Acessos, Logins e Senhas</button></a>
+    <button>Cursos Estude+</button>
+    <button>Métodos e Conteúdos</button>
+    <button>Conteúdo ENEM</button>
+    <button>Sistema de Questões e Simulados</button>
+    <button>Área de Redação</button>
+    <button>Pagamentos e Renovação</button>
+    <button>Cancelamento e/ou Reembolso</button>
+    <button>Problemas Técnicos</button>
+    <button>Suporte</button>
+  </section>
+
+  <!-- Área de Atividade Recente -->
+  <section class="recent-activity">
+    <h2>Atividade recente</h2>
+    <div class="activity-item">
+      <h3>Exclusão de dados pessoais do aplicativo</h3>
+      <p>Exclusão de dados pessoais</p>
+      <span>Artigo criado: há 8 meses</span>
+    </div>
+    <div class="activity-item">
+      <h3>Acesso Pró</h3>
+      <p>Como acessar meu plano PRO?</p>
+      <span>Artigo criado: há 8 meses</span>
+    </div>
+    <div class="activity-item">
+      <h3>Políticas de Reembolso</h3>
+      <p>Como solicitar o reembolso do plano anual PRO assinado na Black Friday?</p>
+      <span>Artigo criado: há 8 meses</span>
+    </div>
+  </section>
+  </main>
+
+  <!-- Script -->
+  <script>
+    // Pesquisa na barra de pesquisa
+    document.getElementById("searchBar").addEventListener("input", function () {
+      const query = this.value.toLowerCase();
+      const activities = document.querySelectorAll(".activity-item");
+
+      activities.forEach(activity => {
+        const title = activity.querySelector("h3").textContent.toLowerCase();
+        if (title.includes(query)) {
+          activity.style.display = "block";
+        } else {
+          activity.style.display = "none";
+        }
+      });
+    });
+  </script>
+  <script src="JS/app.js"></script>
+</body>
+</html>

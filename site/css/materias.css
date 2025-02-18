@@ -1,0 +1,103 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #e9edf5;
+}
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.section {
+    background-color: #092bd6;
+    border-radius: 16px;
+    padding: 20px;
+    color: white;
+    margin-bottom: 30px;
+}
+
+.section h1 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.section h1::before {
+    content: "☀";
+    margin-right: 10px;
+    font-size: 1.8rem;
+}
+
+.subjects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.subject-card {
+    background-color: white;
+    color: #092bd6;
+    border-radius: 12px;
+    text-align: center;
+    padding: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subject-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.subject-card h4 {
+    margin-top: 10px;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.subject-card .icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #092bd6;
+}
+
+.icon-biology {
+    color: #1da1f2;
+}
+
+.icon-physics,
+.icon-chemistry,
+.icon-interdisciplinary {
+    color: #092bd6;
+}
+.title{
+    color: #000;
+}
+.dark-mode .title{
+    color: white;
+}
+
+/* Estilo do modo escuro */
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+/* Modo escuro para a seção */
+.dark-mode .section {
+    background-color: #1c1c1c;
+}
+
+/* Modo escuro para os cartões */
+.dark-mode .subject-card {
+    background-color: #1e1e1e;
+    color: white;
+}
+

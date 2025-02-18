@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+  <nav id="sidebar">
+    <img src="imagens/LOGO-S.jpg" alt="Estude+" class="logotipo">
+    <ul>
+      <li>
+        <span class="logo">Estude+</span>
+        <button type="button" title="Menu" onclick=toggleSidebar() id="toggle-btn">
+          <i class="bi bi-chevron-double-left"></i>
+        </button>
+
+      </li>
+
+      <li class="active">
+        <a href="index1.html" class="alinhar">
+          <i class="bi bi-house"></i>
+          <span>Inicio</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="Questão.html">
+          <i class="bi bi-question-circle"></i>
+          <span>Caderno de Questão</span>
+          
+        </a>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          <i class="bi bi-person"></i>
+          <span>Area do Aluno</span>
+          <i class="bi bi-chevron-down"></i>
+
+        </button>
+        <ul class="sub-menu">
+          <li><a href="Suporte.html">Suporte</a></li>
+          <li><a href="Configurações.html">Configurações</a></li>
+        </ul>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">  
+          <i class="bi bi-book"></i>
+          <span>Materias</span>
+          <i class="bi bi-chevron-down"></i>
+        </button>
+        
+        <ul class="sub-menu">
+            <li><a href="materias.html">Natureza</a></li>
+            <li><a href="materias.html">Linguagem</a></li>
+            <li><a href="materias.html">Matematica</a></li>
+            <li><a href="materias.html">Humanas</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="calendario.html">
+          <i class="bi bi-calendar3"></i>
+          <span>Calendario</span>
+        </a>
+      </li>
+      <li>
+        <a href="redações.HTML">
+          <i class="bi bi-file-earmark"></i>
+          <span>Redação</span>
+        </a>
+      </li>
+      <li class="dark-mode-toggle">
+        <button id="dark-mode-toggle" title="Modo Escuro">
+          <i class="bi bi-moon"></i> 
+          <span>Modo Escuro</span>
+        </button>
+      </li>
+      
+      <li class="loggout">
+        <a href="../index.html">
+          <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </i>
+        </a>
+      </li>
+
+
+      <li class="logout">
+        <a href="../index.html">
+          <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+        <!-- Painel principal -->
+        <main class="painel">
+          <div class="painel-header">
+
+          <section class="banner">
+              <div class="banner-conteudo">
+                <header>
+                  <h1>Olá Estude+! Esse é o seu dashboard</h1>
+              </header>
+                  <H2>Bem-vindo ao seu <p class="plano-index">Plano</p></H2>
+            <p>Aqui você terá acesso exclusivo a conteúdo interativo, quizzes, e muito mais!</p>
+            
+              </div>
+          </section>
+
+          <section class="usuario">
+            <div class="usuario-info">
+              <img src="https://w7.pngwing.com/pngs/193/660/png-transparent-computer-icons-woman-avatar-avatar-girl-thumbnail.png" alt="Avatar do Usuário" class="usuario-avatar" ID="USUARIO">
+              <div>
+                <p>Olá, <strong class="nome-fulano">Fulano de Tal</strong>!</p>
+                <p>Aluno(a)</p>
+              </div>
+            </div>
+          </section>
+          </div>
+
+          <section class="estatisticas">
+              <div class="cartao">
+                  <h2>Questões Respondidas</h2>
+                  <p>0/14987</p>
+
+              </div>
+              <div class="cartao">
+                  <h2>Simulados Realizados</h2>
+                  <p>0/48</p>
+              </div>
+              <div class="cartao">
+                  <h2>Semanas do Plano</h2>
+                  <p>0/30</p>
+              </div>
+              <div class="cartao">
+                  <h2>Materiais visitados</h2>
+                  <p>0/350</p>
+              </div>
+          </section>
+
+<div class="notificacoes-container">
+    <div class="header">
+        <h2>Notificações</h2>
+        <a href="#">Ver todas →</a>
+    </div>
+    <div class="notificacao">
+        <div class="info">
+            <img src="imagens/sino-removebg-preview.png" alt="Avatar do professor" class="avatar">
+            <div>
+                <p>Estude+ · 11/02/2025</p>
+                <span>Redação disponível na plataforma!</span>
+            </div>
+        </div>
+        <span class="status lida">LIDA ✓</span>
+    </div>
+    <div class="notificacao">
+        <div class="info">
+            <img src="imagens/sino-removebg-preview.png" alt="Avatar do professor" class="avatar">
+            <div>
+                <p>Estude+ · 03/02/2025</p>
+                <span>Correção ENEM 2024 disponível na platafo...</span>
+            </div>
+        </div>
+        <span class="status lida">LIDA ✓</span>
+    </div>
+    <div class="notificacao">
+        <div class="info">
+            <img src="imagens/sino-removebg-preview.png" alt="Avatar do professor" class="avatar">
+            <div>
+                <p>Estude+ · 03/03/2025</p>
+                <span>Horário de atendimento da equipe de supo...</span>
+            </div>
+        </div>
+        <span class="status lida">LIDA ✓</span>
+    </div>
+</div>
+
+
+      </main>
+      
+  <script type="text/javascript" src="JS/app.js"></script>
+</body>
+</html>

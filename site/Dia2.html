@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+<style>
+    
+    .main {
+      width: 1000px;
+      margin: 30px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Cabeçalho da questão */
+    .question-header {
+      font-size: 1.5em;
+      font-weight: 600;
+      margin-bottom: 15px;
+      text-align: center;
+      color: #007bff;
+    }
+
+    .question {
+      font-size: 1.2em;
+      color:black;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    /* Botões de opções */
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .options button {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .options button:hover {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .options button.selected {
+      background-color: #007bff;
+      color: white;
+      border-color: #0056b3;
+    }
+
+    /* Navegação */
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .navigation button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .navigation button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    .navigation button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Seletores de questões */
+    .question-selector {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .question-selector button {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      padding: 10px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .question-selector button:hover {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .question-selector button.selected {
+      background-color: #007bff;
+      color: white;
+    }
+
+    /* Cronômetro */
+    .timer {
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #555;
+    }
+
+    .eye-toggle {
+      font-size: 0.9em;
+      color: #007bff;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .eye-toggle:hover {
+      text-decoration: underline;
+    }
+
+    /* Resultados */
+    .result-container {
+      text-align: center;
+      margin-top: 30px;
+      color: #333;
+    }
+
+    .result-container h2 {
+      font-size: 1.8em;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .result-container p {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .result-container p:last-child {
+      color: #555;
+    }
+
+    /* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode .main {
+  background-color: #2d2d2d;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .question-header {
+  color: #4a90e2;
+}
+
+body.dark-mode .question {
+  color: #ccc;
+}
+
+body.dark-mode .options button {
+  background-color: #333;
+  border: 1px solid #444;
+  color: #f0f0f0;
+}
+
+body.dark-mode .options button:hover {
+  background-color: #4a90e2;
+  color: white;
+}
+
+body.dark-mode .options button.selected {
+  background-color: #4a90e2;
+  color: white;
+  border-color: #357ab7;
+}
+
+body.dark-mode .navigation button {
+  background-color: #4a90e2;
+  color: white;
+}
+
+body.dark-mode .navigation button:hover {
+  background-color: #357ab7;
+}
+
+body.dark-mode .question-selector button {
+  background-color: #333;
+  border: 1px solid #444;
+  color: #f0f0f0;
+}
+
+body.dark-mode .question-selector button:hover {
+  background-color: #4a90e2;
+  color: white;
+}
+
+body.dark-mode .timer {
+  color: #ddd;
+}
+
+body.dark-mode .eye-toggle {
+  color: #4a90e2;
+}
+
+body.dark-mode .result-container {
+  color: #f0f0f0;
+}
+
+body.dark-mode .result-container h2 {
+  color: #4a90e2;
+}
+
+body.dark-mode .result-container p {
+  color: #ccc;
+}
+
+body.dark-mode .result-container p:last-child {
+  color: #aaa;
+}
+</style>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+  <nav id="sidebar">
+    <img src="imagens/LOGO-S.jpg" alt="Estude+" class="logotipo">
+    <ul>
+      <li>
+        <span class="logo">Estude+</span>
+        <button type="button" title="Menu" onclick=toggleSidebar() id="toggle-btn">
+          <i class="bi bi-chevron-double-left"></i>
+        </button>
+      </li>
+      <li>
+        <a href="index1.html" class="alinhar">
+          <i class="bi bi-house"></i>
+          <span>Inicio</span>
+        </a>
+      </li>
+      
+      <li class="active">
+        <a href="Questão.html">
+          <i class="bi bi-question-circle"></i>
+          <span>Caderno de Questão</span>
+          
+        </a>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          <i class="bi bi-person"></i>
+          <span>Area do Aluno</span>
+          <i class="bi bi-chevron-down"></i>
+
+        </button>
+        <ul class="sub-menu">
+          <li><a href="Suporte.html">Suporte</a></li>
+          <li><a href="Configurações.html">Configurações</a></li>
+        </ul>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          
+            <i class="bi bi-book"></i>
+            <span>Materias</span>
+          
+          <i class="bi bi-chevron-down"></i>
+        </button>
+        <ul class="sub-menu">
+          <li><a href="materias.html">Natureza</a></li>
+          <li><a href="materias.html">Linguagem</a></li>
+          <li><a href="materias.html">Matematica</a></li>
+          <li><a href="materias.html">Humanas</a></li>
+      </ul>
+      </li>
+      <li>
+        <a href="calendario.html">
+          <i class="bi bi-calendar3"></i>
+          <span>Calendario</span>
+        </a>
+      </li>
+      <li>
+        <a href="redações.HTML">
+          <i class="bi bi-file-earmark"></i>
+          <span>Redação</span>
+        </a>
+      </li>
+      <li class="dark-mode-toggle">
+        <button id="dark-mode-toggle" title="Modo Escuro">
+          <i class="bi bi-moon"></i> 
+          <span>Modo Escuro</span>
+        </button>
+      </li>
+      <li class="loggout">
+        <a href="../index.html">
+          <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </i>
+        </a>
+      </li>
+
+
+      <li class="logout">
+        <a href="../index.html">
+          <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+<body>
+  <div class="main">
+    <div class="timer" id="timer">Tempo restante: 6:00:00</div>
+    <div id="question-container">
+      <div class="question-header" id="question-header">Questão 1 de 5</div>
+      <div class="eye-toggle" id="eye-toggle">👁 Ocultar Tempo</div>
+      <div class="question" id="question">Qual é a capital do Brasil?</div>
+      <div class="options" id="options">
+        <button data-option="A">A) São Paulo</button>
+        <button data-option="B">B) Brasília</button>
+        <button data-option="C">C) Rio de Janeiro</button>
+        <button data-option="D">D) Salvador</button>
+      </div>
+    </div>
+    <div class="navigation">
+      <button id="previous-button" disabled>Anterior</button>
+      <button id="next-button">Próximo</button>
+    </div>
+    <div class="question-selector" id="question-selector"></div>
+    <div class="result-container" id="result-container" style="display: none;">
+      <h2>Resultado Final</h2>
+      <p id="score"></p>
+      <p>Obrigado por participar do simulado!</p>
+    </div>
+  </div>
+  <script>
+    const questions = [
+      { question: "Qual é a capital do Brasil?", options: ["São Paulo", "Brasília", "Rio de Janeiro", "Salvador"], correct: "B" },
+      { question: "Quanto é 2 + 2?", options: ["3", "4", "5", "6"], correct: "B" },
+      { question: "Qual é a maior floresta tropical do mundo?", options: ["Floresta Amazônica", "Floresta Negra", "Floresta de Sherwood", "Floresta do Congo"], correct: "A" },
+      { question: "Quem pintou a Mona Lisa?", options: ["Van Gogh", "Leonardo da Vinci", "Picasso", "Michelangelo"], correct: "B" },
+      { question: "Em que ano o homem pisou na Lua pela primeira vez?", options: ["1965", "1969", "1972", "1980"], correct: "B" },
+    ];
+
+    let currentQuestionIndex = 0;
+    const answers = {};
+    let timer = 6 * 60 * 60; // 6 horas em segundos
+    let showTimer = true;
+
+    const timerElement = document.getElementById("timer");
+    const questionHeader = document.getElementById("question-header");
+    const questionText = document.getElementById("question");
+    const optionsContainer = document.getElementById("options");
+    const previousButton = document.getElementById("previous-button");
+    const nextButton = document.getElementById("next-button");
+    const questionSelector = document.getElementById("question-selector");
+    const resultContainer = document.getElementById("result-container");
+    const scoreElement = document.getElementById("score");
+    const eyeToggle = document.getElementById("eye-toggle");
+
+    function updateTimer() {
+      const hours = Math.floor(timer / 3600);
+      const minutes = Math.floor((timer % 3600) / 60);
+      const seconds = timer % 60;
+      timerElement.textContent = `Tempo restante: ${hours}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+
+      if (timer <= 0) {
+        clearInterval(timerInterval);
+        showResults();
+      }
+      timer--;
+    }
+
+    const timerInterval = setInterval(updateTimer, 1000);
+
+    eyeToggle.addEventListener("click", () => {
+      showTimer = !showTimer;
+      timerElement.style.display = showTimer ? "block" : "none";
+      eyeToggle.textContent = showTimer ? "👁 Ocultar Tempo" : "👁 Mostrar Tempo";
+    });
+
+    function renderQuestion() {
+      const question = questions[currentQuestionIndex];
+      questionHeader.textContent = `Questão ${currentQuestionIndex + 1} de ${questions.length}`;
+      questionText.textContent = question.question;
+      optionsContainer.innerHTML = question.options.map(
+        (option, index) => `<button data-option="${String.fromCharCode(65 + index)}">${option}</button>`
+      ).join("");
+      const optionButtons = optionsContainer.querySelectorAll("button");
+      optionButtons.forEach((button) => {
+        button.addEventListener("click", () => selectOption(button));
+      });
+      updateQuestionSelector();
+    }
+
+    function selectOption(button) {
+      const selectedOption = button.dataset.option;
+      answers[currentQuestionIndex] = selectedOption;
+      optionsContainer.querySelectorAll("button").forEach((btn) => btn.classList.remove("selected"));
+      button.classList.add("selected");
+    }
+
+    function updateQuestionSelector() {
+      questionSelector.innerHTML = "";
+      questions.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.textContent = index + 1;
+        button.classList.toggle("selected", index === currentQuestionIndex);
+        button.addEventListener("click", () => goToQuestion(index));
+        questionSelector.appendChild(button);
+      });
+    }
+
+    function goToQuestion(index) {
+      currentQuestionIndex = index;
+      renderQuestion();
+      updateNavigation();
+    }
+
+    function updateNavigation() {
+      previousButton.disabled = currentQuestionIndex === 0;
+    }
+
+    function showResults() {
+      resultContainer.style.display = "block";
+      let score = 0;
+      questions.forEach((question, index) => {
+        if (answers[index] === question.correct) {
+          score++;
+        }
+      });
+      scoreElement.textContent = `Você acertou ${score} de ${questions.length} questões.`;
+    }
+
+    nextButton.addEventListener("click", () => {
+      if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        renderQuestion();
+      } else if (Object.keys(answers).length === questions.length) {
+        showResults();
+      } else {
+        alert("Por favor, responda todas as questões antes de finalizar.");
+      }
+      updateNavigation();
+    });
+
+    previousButton.addEventListener("click", () => {
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        renderQuestion();
+        updateNavigation();
+      }
+    });
+
+    renderQuestion();
+    updateNavigation();
+  </script>
+  <script src="JS/app.js"></script>
+</body>
+</html>

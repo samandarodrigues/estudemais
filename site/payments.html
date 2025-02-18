@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Assine agora! | Estude+</title>
+    <link rel="stylesheet" href="css/payments.css">
+    <link rel="stylesheet" href="css/payment-colors.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<body>
+    <div class="containerb">
+        <div class="logo-container">
+            <img style="height: 80PX; width: 80PX;" src="imagens/LOGO-S.jpg" alt="Logo do Estude+" class="logo">
+        </div>
+
+        <div class="progress-bar">
+            <div class="step">
+                <div class="circle">1</div>
+                <p>Decisão de Entrar</p>
+            </div>
+            <div class="step completed">
+                <div class="circle">2</div>
+                <p>Pagamento</p>
+            </div>
+            <div class="step">
+                <div class="circle">3</div>
+                <p>Decolar nos Estudos</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <!-- Centralizado no topo -->
+            <div class="payment-selection">
+                <h2>Escolha sua forma de pagamento:</h2>
+                <div class="payment-options">
+                    <label for="pixRadio">
+                        <input type="radio" name="payment-method" id="pixRadio" class="payment-radio" />
+                        <i class="fas fa-qrcode"></i> PIX
+                    </label>
+                    <label for="cardRadio">
+                        <input type="radio" name="payment-method" id="cardRadio" class="payment-radio" />
+                        <i class="fas fa-credit-card"></i> Cartão de Crédito
+                    </label>
+                </div>
+            </div>            
+
+            <!-- Formulário PIX -->
+            <div id="pixForm" class="payment-method-form" style="display: none;">
+                <h3>Pagamento via PIX</h3>
+                <section class="payment-section">
+                    <div class="container">
+                        <div class="payment-wrapper">
+                            <div class="payment-left">
+                                <div class="payment-header">
+                                    <div class="payment-header-icon"><i class="fas fa-bolt"></i></div>
+                                    <div class="payment-header-title">Plano de Estudo</div>
+                                    <p class="payment-header-description">Esse foi o plano selecionado:</p>
+                                </div>
+                                <div class="payment-content">
+                                    <div class="payment-body">
+                                        <div class="payment-plan">
+                                            <div class="payment-plan-type">Pro</div>
+                                            <div class="payment-plan-info">
+                                                <div class="payment-plan-info-name">Professional Plan</div>
+                                                <div class="payment-plan-info-price">$49 per month</div>
+                                            </div>
+                                            <a href="signatures.html" class="payment-plan-change">Trocar</a>
+                                        </div>
+                                        <div class="payment-summary">
+                                            <div class="payment-summary-item">
+                                                <div class="payment-summary-name">Preço à vista</div>
+                                                <div class="payment-summary-price2">$10</div>
+                                            </div>
+                                            <div class="payment-summary-item">
+                                                <div class="payment-summary-name">Desconto de 50%</div>
+                                                <div class="payment-summary-price3">-$10</div>
+                                            </div>
+                                            <div class="payment-summary-divider"></div>
+                                            <div class="payment-summary-item payment-summary-total">
+                                                <div class="payment-summary-name">Total</div>
+                                                <div class="payment-summary-price4">-$10</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="payment-right">
+                                <form action="" class="payment-form">
+                                    <h1 class="payment-title">Detalhes do Pagamento</h1>
+                                    <div class="payment-form-group">
+                                        <input type="text" placeholder=" " class="payment-form-control" id="cpf-cnpj">
+                                        <label for="cpf-cnpj" class="payment-form-label payment-form-label-required">CPF/CNPJ</label>
+                                        <p id="cpf-error" style="color: red; display: none;">Por favor, insira um CPF ou CNPJ válido.</p>
+                                    </div>
+                                    <!-- Mensagem e QR Code -->
+                                    <div id="pix-qr-container">
+                                        <p>Escaneie o QR CODE ou copie a chave PIX</p>
+                                        <div>
+                                            <img id="pix-qrcode" src="imagens/qrcode.png" alt="QR Code" width="200">
+                                        </div>
+                                        <button type="button" id="copy-btn" class="payment-form-submit-button">Copiar chave PIX</button>
+                                        <p id="copy-message" style="display:none; color: green;">Chave PIX copiada com sucesso!</p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <!-- Formulário Cartão de Crédito -->
+            <div id="cardForm" class="payment-method-form" style="display: none;">
+                <h3>Pagamento via Cartão de Crédito</h3>
+                <section class="payment-section">
+                    <div class="container">
+                        <div class="payment-wrapper">
+                            <div class="payment-left">
+                                <div class="payment-header">
+                                    <div class="payment-header-icon"><i class="fas fa-bolt"></i></div>
+                                    <div class="payment-header-title">Plano de Estudo</div>
+                                    <p class="payment-header-description">Esse foi o plano selecionado:</p>
+                                </div>
+                                <div class="payment-content">
+                                    <div class="payment-body">
+                                        <div class="payment-plan">
+                                            <div class="payment-plan-type">Pro</div>
+                                            <div class="payment-plan-info">
+                                                <div class="payment-plan-info-name">Professional Plan</div>
+                                                <div class="payment-plan-info-price">$49 per month</div>
+                                            </div>
+                                            <a href="signatures.html" class="payment-plan-change">Trocar</a>
+                                        </div>
+                                        <div class="payment-summary">
+                                            <div class="payment-summary-item">
+                                                <div class="payment-summary-name">Preço à vista</div>
+                                                <div class="payment-summary-price2">$10</div>
+                                            </div>
+                                            <div class="payment-summary-item">
+                                                <div class="payment-summary-name">Desconto de 50%</div>
+                                                <div class="payment-summary-price3">-$10</div>
+                                            </div>
+                                            <div class="payment-summary-divider"></div>
+                                            <div class="payment-summary-item payment-summary-total">
+                                                <div class="payment-summary-name">Total</div>
+                                                <div class="payment-summary-price4">-$10</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="payment-right">
+                                <form action="" class="payment-form">
+                                    <h1 class="payment-title">Detalhes do Pagamento</h1>
+                                    <div class="payment-method">
+                                        <input type="radio" name="payment-method" id="method-1" checked>
+                                        <label for="method-1" class="payment-method-item">
+                                            <img src="imagens/visa.png" alt="">
+                                        </label>
+                                        <input type="radio" name="payment-method" id="method-2">
+                                        <label for="method-2" class="payment-method-item">
+                                            <img src="imagens/mastercard.png" alt="">
+                                        </label>
+                                        <input type="radio" name="payment-method" id="method-3">
+                                        <label for="method-3" class="payment-method-item">
+                                            <img src="imagens/paypal.png" alt="">
+                                        </label>
+                                        <input type="radio" name="payment-method" id="method-4">
+                                        <label for="method-4" class="payment-method-item">
+                                            <img src="imagens/stripe.png" alt="">
+                                        </label>
+                                    </div>
+                                    <div class="payment-form-group">
+                                        <input type="text" placeholder=" " class="payment-form-control" id="cpf-cnpj2">
+                                        <label for="cpf-cnpj" class="payment-form-label payment-form-label-required">CPF/CNPJ</label>
+                                    </div>
+                                    <div class="payment-form-group">
+                                        <input type="text" placeholder=" " class="payment-form-control" id="nome">
+                                        <label for="nome" class="payment-form-label payment-form-label-required">Nome do titular</label>
+                                    </div>
+                                    <div class="payment-form-group">
+                                        <input type="text" placeholder=" " class="payment-form-control" id="card-number">
+                                        <label for="card-number" class="payment-form-label payment-form-label-required">Número do cartão</label>
+                                    </div>
+                                    <div class="payment-form-group-flex">
+                                        <div class="payment-form-group">
+                                            <input type="date" placeholder=" " class="payment-form-control" id="expiry-date">
+                                            <label for="expiry-date" class="payment-form-label payment-form-label-required">Data de expiração</label>
+                                        </div>
+                                        <div class="payment-form-group">
+                                            <input type="text" placeholder=" " class="payment-form-control" id="cvv">
+                                            <label for="cvv" class="payment-form-label payment-form-label-required">CVV</label>
+                                        </div>
+                                    </div>
+                                    <a href="backoff.html" id="submit-button" class="payment-form-submit-button">Finalizar pagamento</a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <script src="JS/payments.js"></script>
+</body>
+</html>

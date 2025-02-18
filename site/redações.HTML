@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redações</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .filters input, .filters select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .card {
+            position: relative;
+            background-color: #fff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .card-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .card-content h3 {
+            font-size: 16px;
+            margin: 0;
+            line-height: 1.4;
+        }
+        .star {
+            font-size: 20px;
+            color: gold;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        .pagination a {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 0 5px;
+            color: #007BFF;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .pagination a.active, .pagination a:hover {
+            background-color: #007BFF;
+            color: #fff;
+        }
+
+        /* Modo escuro geral */
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+/* Ajuste da área do container */
+.dark-mode .container {
+    background-color: transparent;
+}
+
+/* Ajuste do título no modo escuro */
+.dark-mode h1 {
+    color: #e0e0e0;
+}
+
+/* Ajuste dos filtros no modo escuro */
+.dark-mode .filters input,
+.dark-mode .filters select {
+    background-color: #1e1e1e;
+    color: white;
+    border: 1px solid #444;
+}
+
+/* Modo escuro para os cartões */
+.dark-mode .card {
+    background-color: #222;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+}
+
+/* Ajuste do texto dentro do card */
+.dark-mode .card-content {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Ajuste da estrela no modo escuro */
+.dark-mode .star {
+    color: #ffcc00;
+}
+
+/* Modo escuro para a paginação */
+.dark-mode .pagination a {
+    color: #bb86fc;
+    border-color: #444;
+}
+
+.dark-mode .pagination a.active, 
+.dark-mode .pagination a:hover {
+    background-color: #bb86fc;
+    color: #121212;
+}
+
+
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 colunas para telas médias */
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas para telas menores */
+    }
+    .filters {
+        flex-direction: column; /* Empilha os filtros */
+        gap: 10px; /* Espaço entre os elementos */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid {
+        grid-template-columns: 1fr; /* 1 coluna para telas pequenas */
+    }
+    .card img {
+        height: 140px; /* Reduz altura da imagem para evitar rolagem */
+    }
+    .filters input, .filters select {
+        width: 100%; /* Ajusta os filtros para ocupar toda a largura */
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+    
+  <nav id="sidebar">
+    <img src="D:/imagens/LOGO-S.jpg" alt="Estude+" class="logotipo">
+    <ul>
+      <li>
+        <span class="logo">Estude+</span>
+        <button type="button" title="Menu" onclick="toggleSidebar()" id="toggle-btn">
+          <i class="bi bi-chevron-double-left"></i>
+        </button>
+      </li>
+      <li>
+        <a href="index1.html" class="alinhar">
+          <i class="bi bi-house"></i>
+          <span>Inicio</span>
+        </a>
+      </li>
+      <li>
+        <a href="Questão.html">
+          <i class="bi bi-question-circle"></i>
+          <span>Caderno de Questão</span>
+        </a>
+      </li>
+      <li>
+        <button onclick="toggleSubMenu(this)" class="dropdown-btn">
+          <i class="bi bi-person"></i>
+          <span>Área do Aluno</span>
+          <i class="bi bi-chevron-down"></i>
+        </button>
+        <ul class="sub-menu">
+          <li><a href="Suporte.html">Suporte</a></li>
+          <li><a href="Configurações.html">Configurações</a></li>
+        </ul>
+      </li>
+      <li>
+        <button type="button" title="Menu" onclick="toggleSubMenu(this)" class="dropdown-btn">
+          <i class="bi bi-book"></i>
+          <span>Matérias</span>
+          <i class="bi bi-chevron-down"></i>
+        </button>
+        <ul class="sub-menu">
+          <li><a href="materias.html">Natureza</a></li>
+          <li><a href="materias.html">Linguagem</a></li>
+          <li><a href="materias.html">Matemática</a></li>
+          <li><a href="materias.html">Humanas</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="calendario.html">
+          <i class="bi bi-calendar3"></i>
+          <span>Calendário</span>
+        </a>
+      </li>
+      <li>
+        <a href="redações.HTML">
+          <i class="bi bi-file-earmark"></i>
+          <span>Redação</span>
+        </a>
+      </li>
+      <li class="dark-mode-toggle">
+        <button id="dark-mode-toggle" title="Modo Escuro">
+          <i class="bi bi-moon"></i> 
+          <span>Modo Escuro</span>
+        </button>
+      </li>
+      <li class="loggout">
+        <a href="../index.html">
+          <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </i>
+        </a>
+      </li>
+      <li class="logout">
+        <a href="../index.html">
+          <i class="bi bi-box-arrow-right"></i>
+          <span>Logout</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <div class="container">
+        <div class="filters">
+            <input type="text" id="search" placeholder="Pesquise" onkeyup="filterCards()" />
+            <select id="difficulty" onchange="filterCards()">
+                <option value="">Dificuldade</option>
+                <option value="fácil">Fácil</option>
+                <option value="médio">Médio</option>
+                <option value="difícil">Difícil</option>
+            </select>
+            <select id="itemsPerPage" onchange="filterCards()">
+                <option value="4">4 temas por página</option>
+                <option value="8">8 temas por página</option>
+                <option value="12">12 temas por página</option>
+            </select>
+        </div>
+        <h1>Temas</h1>
+        <div class="grid" id="cardGrid">
+
+            <div class="card" data-difficulty="fácil">
+                <a href="folha.html">
+                    <img src="imagens/pi21-BANNER MEIO AMBIENTE.jpg" alt="Ensino Profissionalizante">
+                    <div class="card-content">
+                        <h3>A importância da preservação ambiental no Brasil.</h3>
+                        <span class="star">★</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="card" data-difficulty="médio">
+                <a href="folha.html">
+                <img src="imagens/defici.jpg" alt="Ensino Profissionalizante">
+                <div class="card-content">
+                    <h3>Os desafios da inclusão de pessoas com deficiência na sociedade.</h3>
+                    <span class="star">★★</span>
+                </div>
+                </a>
+            </div>
+            <div class="card" data-difficulty="difícil">
+                <a href="folha.html">
+                <img src="imagens/tecno.jpg" alt="Ensino Profissionalizante">
+                <div class="card-content">
+                    <h3>O impacto das novas tecnologias na educação.</h3>
+                    <span class="star">★★★</span>
+                </div>
+                </a>
+            </div>
+            <div class="card" data-difficulty="fácil">
+                <a href="folha.html">
+                <img src="imagens/leitura.jpg" alt="Ensino Profissionalizante">
+                <div class="card-content">
+                    <h3>A importância da leitura na formação do cidadão.</h3>
+                    <span class="star">★</span>
+                </div>
+                </a>
+            </div>
+            <div class="card" data-difficulty="médio">
+                <a href="folha.html">
+                <img src="imagens/midia-e-consumo.webp" alt="Ensino Profissionalizante">
+                <div class="card-content">
+                    <h3>O papel da mídia na formação da opinião pública.</h3>
+                    <span class="star">★★</span>
+                </div>
+                </a>
+            </div>
+            <div class="card" data-difficulty="difícil">
+                <a href="folha.html">
+                <img src="imagens/pesq.jpg" alt="Ensino Profissionalizante">
+                <div class="card-content">
+                    <h3>A ética no uso de tecnologias em pesquisas científicas.</h3>
+                    <span class="star">★★★</span>
+                </div>
+                </a>
+            </div>
+            <div class="card" data-difficulty="fácil">
+                <a href="folha.html">
+                <img src="imagens/alim.jpg" alt="Ensino Profissionalizante">
+                <div class="card-content">
+                    <h3>A importância da alimentação saudável na infância.</h3>
+                    <span class="star">★</span>
+                </div>
+                </a>
+            </div>
+            <div class="card" data-difficulty="médio">
+                <a href="folha.html">
+                <img src="imagens/pand.jpg" alt="Ensino Profissionalizante">
+                <div class="card-content">
+                    <h3>O impacto da pandemia no mercado de trabalho.</h3>
+                    <span class="star">★★</span>
+                </div>
+                </a>
+            </div>
+
+
+            <div class="card" data-difficulty="médio">
+                <a href="folha.html">
+                    <img src="imagens/educ.jpg" alt="Educação no Brasil">
+                    <div class="card-content">
+                        <h3>Os desafios da educação no Brasil.</h3>
+                        <span class="star">★★</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="card" data-difficulty="médio">
+                <a href="folha.html">
+                    <img src="imagens/tecnotra.jpg" alt="Impacto da Tecnologia">
+                    <div class="card-content">
+                        <h3>O impacto da tecnologia no mercado de trabalho.</h3>
+                        <span class="star">★★</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="card" data-difficulty="médio">
+                <a href="folha.html">
+                    <img src="imagens/sust.jpg" alt="Sustentabilidade">
+                    <div class="card-content">
+                        <h3>A importância da sustentabilidade no mundo contemporâneo.</h3>
+                        <span class="star">★★</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="card" data-difficulty="médio">
+                <a href="folha.html">
+                    <img src="imagens/saude.jpg" alt="Sistema de Saúde">
+                    <div class="card-content">
+                        <h3>Os desafios do sistema de saúde pública no Brasil.</h3>
+                        <span class="star">★★</span>
+                    </div>
+                </a>
+            </div>
+            
+
+            
+            
+
+
+        </div>
+        <div class="pagination" id="pagination"></div>
+    </div>
+</main>
+    <script>
+        let cards = Array.from(document.querySelectorAll('.card'));
+        let currentPage = 1;
+        let cardsPerPage = 4;
+
+        // Atualiza os cards exibidos e a paginação
+        function updatePagination() {
+            const searchInput = document.getElementById('search').value.toLowerCase();
+            const difficulty = document.getElementById('difficulty').value;
+            cardsPerPage = parseInt(document.getElementById('itemsPerPage').value, 10);
+
+            const visibleCards = cards.filter(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const cardDifficulty = card.dataset.difficulty;
+                return title.includes(searchInput) && (difficulty === '' || cardDifficulty === difficulty);
+            });
+
+            const totalPages = Math.ceil(visibleCards.length / cardsPerPage);
+            const pagination = document.getElementById('pagination');
+            pagination.innerHTML = '';
+
+            for (let i = 1; i <= totalPages; i++) {
+                const pageLink = document.createElement('a');
+                pageLink.href = '#';
+                pageLink.innerText = i;
+                pageLink.className = i === currentPage ? 'active' : '';
+                pageLink.onclick = (event) => {
+                    event.preventDefault();
+                    currentPage = i;
+                    renderCards(visibleCards);
+                    updatePagination();
+                };
+                pagination.appendChild(pageLink);
+            }
+
+            renderCards(visibleCards);
+        }
+
+        // Renderiza os cards de acordo com a página
+        function renderCards(visibleCards) {
+            const start = (currentPage - 1) * cardsPerPage;
+            const end = currentPage * cardsPerPage;
+            const paginatedCards = visibleCards.slice(start, end);
+            const grid = document.getElementById('cardGrid');
+            grid.innerHTML = '';
+            paginatedCards.forEach(card => grid.appendChild(card));
+        }
+
+        // Filtra os cards quando o usuário digitar ou selecionar algo
+        function filterCards() {
+            currentPage = 1; // Reinicia a página para a primeira quando o filtro mudar
+            updatePagination();
+        }
+
+        // Inicializa a página
+        document.addEventListener('DOMContentLoaded', () => {
+            updatePagination();
+        });
+    </script>
+    <script src="JS/app.js"></script>
+</body>
+</html>

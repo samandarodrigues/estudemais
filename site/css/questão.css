@@ -1,0 +1,155 @@
+
+#main {
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  overflow: hidden;
+}
+
+#main h1 {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.layout-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens se movam para baixo em telas pequenas */
+  justify-content: center; /* Alinha os itens ao centro */
+  gap: 70px; /* Espaçamento entre os cards */
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.category-section {
+  background-color: rgb(56, 35, 161);
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  width: 100%; /* Ocupar 100% da largura disponível */
+  max-width: 480px; /* Limite de largura para os cards */
+  box-sizing: border-box;
+}
+
+.category-title {
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.category-title a {
+  background-color:  rgb(191, 185, 226);
+  text-decoration: none;
+  color: #003399;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.category-title a:hover {
+  background-color: #eee5e5;
+  padding: 15px;
+}
+
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dois cartões por linha */
+  gap: 20px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.subject-card {
+  background-color: rgb(191, 185, 226);
+  color: #003399;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* Organiza nome e ícone em coluna */
+  align-items: center;
+  text-align: center;
+  width: 100%; /* Garante que o cartão não ultrapasse o limite */
+  max-width: 200px; /* Limite a largura do cartão */
+  box-sizing: border-box;
+}
+
+.subject-icon {
+  margin-top: 15px;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 900px) {
+  .layout-container {
+    flex-direction: column; /* Empilha os itens verticalmente em telas menores */
+    gap: 20px;
+    padding: 10px;
+  }
+
+  .category-section {
+    width: 100%;
+    max-width: none;
+    margin-bottom: 20px;
+  }
+  #Prova{
+    margin-bottom: 100px;
+  }
+
+  .subject-card {
+    max-width: 100%; /* Permite que os cartões se ajustem conforme a tela */
+    padding: 15px;
+  }
+
+  .subject-icon {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .category-section {
+    padding: 15px;
+  }
+
+  .subject-card {
+    padding: 10px;
+  }
+
+  .subject-icon {
+    font-size: 18px;
+  }
+}
+
+
+
+
+/* Modo Escuro */
+.dark-mode {
+  background-color: black;
+  color: #ffffff;
+}
+.dark-mode #main h1 {
+  color: #ffffff;
+}
+
+.dark-mode .category-section {
+  background-color: rgb(6 24 98);
+}
+
+.dark-mode .subject-card {
+  background-color: rgb(17, 41, 141);
+  color: #ddd;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+
+/* Links no Modo Escuro */
+.dark-mode .category-title a {
+  background-color: rgb(17, 41, 141);
+  color: #fff;
+}
+
+.dark-mode .category-title a:hover {
+  background-color: rgb(6 24 98);
+}
+
+

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+<style>
+    
+    .main {
+      max-width: 90%;
+      margin: 30px auto;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Cabeçalho da questão */
+    .question-header {
+      font-size: 1.5em;
+      font-weight: 600;
+      margin-bottom: 15px;
+      text-align: center;
+      color: #007bff;
+    }
+
+    .question {
+        color: #000;
+      font-size: 1.2em;
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    /* Botões de opções */
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .options button {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.2s, color 0.2s;
+    }
+
+    .options button:hover {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .options button.selected {
+      background-color: #007bff;
+      color: white;
+      border-color: #0056b3;
+    }
+
+    /* Navegação */
+    .navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .navigation button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .navigation button:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+    }
+
+    .navigation button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* Seletores de questões */
+    .question-selector {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .question-selector button {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      padding: 10px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .question-selector button:hover {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .question-selector button.selected {
+      background-color: #007bff;
+      color: white;
+    }
+
+    /* Cronômetro */
+    .timer {
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      margin: 20px 0;
+      color: #555;
+    }
+
+    .eye-toggle {
+      font-size: 0.9em;
+      color: #007bff;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .eye-toggle:hover {
+      text-decoration: underline;
+    }
+
+    /* Resultados */
+    .result-container {
+      text-align: center;
+      margin-top: 30px;
+      color: #333;
+    }
+
+    .result-container h2 {
+      font-size: 1.8em;
+      color: #007bff;
+      margin-bottom: 10px;
+    }
+
+    .result-container p {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .result-container p:last-child {
+      color: #555;
+    }
+
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark-mode .main {
+  background-color: #2d2d2d;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .question-header {
+  color: #4a90e2;
+}
+
+body.dark-mode .question {
+  color: #ccc;
+}
+
+body.dark-mode .options button {
+  background-color: #333;
+  border: 1px solid #444;
+  color: #f0f0f0;
+}
+
+body.dark-mode .options button:hover {
+  background-color: #4a90e2;
+  color: white;
+}
+
+body.dark-mode .options button.selected {
+  background-color: #4a90e2;
+  color: white;
+  border-color: #357ab7;
+}
+
+body.dark-mode .navigation button {
+  background-color: #4a90e2;
+  color: white;
+}
+
+body.dark-mode .navigation button:hover {
+  background-color: #357ab7;
+}
+
+body.dark-mode .question-selector button {
+  background-color: #333;
+  border: 1px solid #444;
+  color: #f0f0f0;
+}
+
+body.dark-mode .question-selector button:hover {
+  background-color: #4a90e2;
+  color: white;
+}
+
+body.dark-mode .timer {
+  color: #ddd;
+}
+
+body.dark-mode .eye-toggle {
+  color: #4a90e2;
+}
+
+body.dark-mode .result-container {
+  color: #f0f0f0;
+}
+
+body.dark-mode .result-container h2 {
+  color: #4a90e2;
+}
+
+body.dark-mode .result-container p {
+  color: #ccc;
+}
+
+body.dark-mode .result-container p:last-child {
+  color: #aaa;
+}
+
+</style>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+  <nav id="sidebar">
+    <img src="imagens/LOGO-S.jpg" alt="Estude+" class="logotipo">
+    <ul>
+      <li>
+        <span class="logo">Estude+</span>
+        <button type="button" title="Menu" onclick=toggleSidebar() id="toggle-btn">
+          <i class="bi bi-chevron-double-left"></i>
+        </button>
+      </li>
+      <li>
+        <a href="index1.html" class="alinhar">
+          <i class="bi bi-house"></i>
+          <span>Inicio</span>
+        </a>
+      </li>
+      
+      <li class="active">
+        <a href="Questão.html">
+          <i class="bi bi-question-circle"></i>
+          <span>Caderno de Questão</span>
+          
+        </a>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          <i class="bi bi-person"></i>
+          <span>Area do Aluno</span>
+          <i class="bi bi-chevron-down"></i>
+
+        </button>
+        <ul class="sub-menu">
+          <li><a href="Suporte.html">Suporte</a></li>
+          <li><a href="Configurações.html">Configurações</a></li>
+        </ul>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          
+            <i class="bi bi-book"></i>
+            <span>Materias</span>
+          
+          <i class="bi bi-chevron-down"></i>
+        </button>
+        <ul class="sub-menu">
+          <li><a href="materias.html">Natureza</a></li>
+          <li><a href="materias.html">Linguagem</a></li>
+          <li><a href="materias.html">Matematica</a></li>
+          <li><a href="materias.html">Humanas</a></li>
+      </ul>
+      </li>
+      <li>
+        <a href="calendario.html">
+          <i class="bi bi-calendar3"></i>
+          <span>Calendario</span>
+        </a>
+      </li>
+      <li>
+        <a href="redações.HTML">
+          <i class="bi bi-file-earmark"></i>
+          <span>Redação</span>
+        </a>
+      </li>
+      <li class="dark-mode-toggle">
+        <button id="dark-mode-toggle" title="Modo Escuro">
+          <i class="bi bi-moon"></i> 
+          <span>Modo Escuro</span>
+        </button>
+      </li>
+      <li class="loggout">
+        <a href="../index.html">
+          <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </i>
+        </a>
+      </li>
+
+
+      <li class="logout">
+        <a href="../index.html">
+          <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+          </i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+<body>
+  <div class="main">
+    <div class="timer" id="timer">Tempo restante: 6:00:00</div>
+    <div id="question-container">
+      <div class="question-header" id="question-header">Questão 1 de 5</div>
+      <div class="eye-toggle" id="eye-toggle">👁 Ocultar Tempo</div>
+      <div class="question" id="question">Qual é a capital do Brasil?</div>
+      <div class="options" id="options">
+        <button data-option="A">A) São Paulo</button>
+        <button data-option="B">B) Brasília</button>
+        <button data-option="C">C) Rio de Janeiro</button>
+        <button data-option="D">D) Salvador</button>
+      </div>
+    </div>
+    <div class="navigation">
+      <button id="previous-button" disabled>Anterior</button>
+      <button id="next-button">Próximo</button>
+    </div>
+    <div class="question-selector" id="question-selector"></div>
+    <div class="result-container" id="result-container" style="display: none;">
+      <h2>Resultado Final</h2>
+      <p id="score"></p>
+      <p>Obrigado por participar do simulado!</p>
+    </div>
+  </div>
+  <script>
+const questions = [
+  {
+    question: "A relação entre as citações atribuídas ao físico Albert Einstein e ao cantor Bob Marley reside na crença de que é necessário:",
+    options: ["Dar oportunidade a pessoas que parecem necessitadas.", "Identificar contextos que podem representar perigo.", "Tirar proveito de situações que podem ser adversas.", "Evitar dificuldades que parecem ser intransponíveis.", "Contestar circunstâncias que parecem ser harmônicas."],
+    correct: "Tirar proveito de situações que podem ser adversas.",
+  },
+  {
+    question: "Nessa letra de canção, que aborda um contexto de ódio e intolerância, o marcador 'instead of' introduz a ideia de:",
+    options: ["Mudança de comportamento.", "Panorama de conflitos.", "Rotina de isolamento.", "Perspectiva bélica.", "Cenário religioso."],
+    correct: "Mudança de comportamento.",
+  },
+  {
+    question: "O texto estabelece uma relação entre elementos da natureza e comandos de um programa de computador para:",
+    options: ["Alertar as pessoas sobre a rápida destruição da natureza.", "Conscientizar os indivíduos sobre a passagem acelerada do tempo.", "Apresentar aos leitores os avanços tecnológicos na área da agricultura.", "Orientar os usuários sobre o emprego sustentável das novas tecnologias.", "Informar os interessados sobre o tempo de crescimento de novas árvores."],
+    correct: "Conscientizar os indivíduos sobre a passagem acelerada do tempo.",
+  },
+  {
+    question: "O problema abordado nesse texto sobre imigrantes residentes nos EUA diz respeito aos prejuízos gerados pelo(a):",
+    options: ["Repúdio ao sotaque espanhol no uso do inglês.", "Resignação diante do apagamento da língua materna.", "Escassez de oportunidades de aprendizado do espanhol.", "Choque entre falantes de línguas distintas de diferentes gerações.", "Concorrência entre as variações linguísticas do inglês e as do espanhol."],
+    correct: "Repúdio ao sotaque espanhol no uso do inglês.",
+  },
+  {
+    question: "A carta da editora Stephanie Allen-Nichols à escritora Alice Walker tem o propósito de:",
+    options: ["Problematizar o enredo de sua obra.", "Acusar o recebimento de seu manuscrito.", "Solicitar a revisão ortográfica de seu texto.", "Informar a transferência de seu livro a outra editora.", "Comunicar a recusa da publicação de seu romance."],
+    correct: "Comunicar a recusa da publicação de seu romance.",
+  },
+  {
+    question: "El virus de la cancelación: La argumentación presentada sobre cultura del cancelamento, esse texto objetiva:",
+    options: ["A presentar el concepto de esta práctica.", "Mostrar la contrariedad de los medios hacia esta actitud.", "Criticar el impacto de esta cultura en la vida en redes sociales.", "Evidenciar la democratización de esta práctica en la sociedad virtual.", "Hablar históricamente sobre el origen y las causas de esta cultura."],
+    correct: "A presentar el concepto de esta práctica.",
+  },
+  {
+    question: "'Y si llueve, que llueva': O comportamento dos personagens narrado no texto destaca:",
+    options: ["O abandono da própria identidade.", "O medo dos perigos durante a noite.", "A influência do grupo na tomada de decisão.", "A diferença cultural entre galegos e andaluzes.", "A variação meteorológica entre Sevilha e Galiza."],
+    correct: "A diferença cultural entre galegos e andaluzes.",
+  },
+  {
+    question: "Celerina Patricia Sánchez Santiago comentou que seu processo de escrita em mixteco foi um desafio porque:",
+    options: ["Destaca a importância da literatura na formação escolar.", "Discute a hegemonia da literatura escrita em espanhol.", "Promove reflexões acerca de conceitos abstratos.", "Representa a pluralidade linguística de seu país.", "Narra uma trajetória de autoconhecimento."],
+    correct: "Representa a pluralidade linguística de seu país.",
+  },
+  {
+    question: "'Morir muy vivos': No texto, a escritora Rosa Montero evidencia a importância de:",
+    options: ["Acumular sabedoria com o passar do tempo.", "Observar o impacto dos anos sobre o corpo.", "Rever os erros e os acertos de sua trajetória.", "Desfrutar de todas as fases da vida.", "Libertar das amarras sociais."],
+    correct: "Desfrutar de todas as fases da vida.",
+  },
+  {
+    question: "'Los últimos días del sitio de Tenochtitlán': Nesse poema, o eu lírico representa a voz de um sobrevivente asteca que testemunha:",
+    options: ["A destruição da capital do Império Asteca pelos colonizadores espanhóis.", "A degradação do meio ambiente no entorno da capital do Império Asteca.", "A tristeza dos refugiados astecas ao deixarem a capital do Império rumo ao exílio.", "A aflição dos astecas ao receberem os colonizadores espanhóis na capital do Império.", "A resistência dos astecas às mudanças feitas pelos colonizadores espanhóis na capital do Império."],
+    correct: "A destruição da capital do Império Asteca pelos colonizadores espanhóis.",
+  },
+  {
+    question: "Expressões e termos utilizados no Amazonas são retratados em livro e camisetas. Essas iniciativas:",
+    options: ["Recomendam produtos feitos por empreendedores da região Norte.", "Ressaltam diferenças entre o falar manauara e outros falares.", "Reverenciam o trabalho feito por pesquisadores brasileiros.", "Destacam a descontração no jeito de ser do amazonense.", "Valorizam o repertório linguístico do povo do Amazonas."],
+    correct: "Valorizam o repertório linguístico do povo do Amazonas.",
+  },
+  {
+    question: "Histórias de atletas paralímpicas que trocaram de modalidade destacam:",
+    options: ["Descrever as rotinas de treinamento das atletas.", "Comparar os desempenhos de atletas de alto rendimento.", "Destacar a trajetória profissional de atletas paralímpicas brasileiras.", "Indicar as categorias mais adequadas a adaptações paralímpicas.", "Estimular a participação de mulheres em campeonatos internacionais."],
+    correct: "Destacar a trajetória profissional de atletas paralímpicas brasileiras.",
+  },
+  {
+    question: "É fundamentalmente no Minho, norte de Portugal, que o cavaquinho aparece como instrumento tipicamente popular. O texto destaca que os instrumentos mencionados:",
+    options: ["Refletem a dependência da utilização de matéria-prima europeia.", "Adaptam suas características a cada cultura, assumindo nova identidade.", "Comprovam a hegemonia portuguesa na invenção de cordófonos dedilhados.", "Ilustram processos de dominação cultural, evidenciando situações de choque cultural.", "Mantêm nomenclatura própria para garantir a fidelidade às formas originais de confecção."],
+    correct: "Adaptam suas características a cada cultura, assumindo nova identidade.",
+  },
+  {
+    question: "Pressão, depressão, estresse e crise de ansiedade no esporte. O texto sugere que essas condições:",
+    options: ["Estão relacionadas às nacionalidades dos praticantes.", "Resultam de modalidades esportivas distintas.", "Decorrem das faixas etárias aproximadas.", "Derivam das representações heroicas dos atletas.", "São causadas pelas pressões constantes dos eventos e da mídia."],
+    correct: "São causadas pelas pressões constantes dos eventos e da mídia.",
+  },
+  {
+    question: "Já ouvi gente falando que o podcast é o renascimento do rádio. Segundo o texto, o podcast:",
+    options: ["Provoca dispersão da atenção em seu público.", "Funciona por meio de uma frequência de ondas curtas.", "Propicia divulgação de conhecimento para seus usuários.", "Tem um formato de interação semelhante ao das redes sociais.", "Constitui uma evolução na transmissão de informações via rádio."],
+    correct: "Propicia divulgação de conhecimento para seus usuários.",
+  },
+  {
+    question: "Evanildo Bechara prepara a sua aposentadoria. Suas falas são representativas da variedade linguística:",
+    options: ["Situacional, pois o contexto exige o uso da linguagem formal.", "Regional, pois ele traz marcas do falar de seu local de nascimento.", "Sociocultural, pois sua formação pressupõe o uso de linguagem rebuscada.", "Geracional, pois ele emprega termos característicos de sua faixa etária.", "Ocupacional, pois ele faz uso de termos específicos de sua área de atuação."],
+    correct: "Ocupacional, pois ele faz uso de termos específicos de sua área de atuação.",
+  },
+  // Continuação até a questão 45
+];
+
+
+
+    let currentQuestionIndex = 0;
+    const answers = {};
+    let timer = 6 * 60 * 60; // 6 horas em segundos
+    let showTimer = true;
+
+    const timerElement = document.getElementById("timer");
+    const questionHeader = document.getElementById("question-header");
+    const questionText = document.getElementById("question");
+    const optionsContainer = document.getElementById("options");
+    const previousButton = document.getElementById("previous-button");
+    const nextButton = document.getElementById("next-button");
+    const questionSelector = document.getElementById("question-selector");
+    const resultContainer = document.getElementById("result-container");
+    const scoreElement = document.getElementById("score");
+    const eyeToggle = document.getElementById("eye-toggle");
+
+    function updateTimer() {
+      const hours = Math.floor(timer / 3600);
+      const minutes = Math.floor((timer % 3600) / 60);
+      const seconds = timer % 60;
+      timerElement.textContent = `Tempo restante: ${hours}:${minutes.toString().padStart(2, "0")}:${seconds.toString().padStart(2, "0")}`;
+
+      if (timer <= 0) {
+        clearInterval(timerInterval);
+        showResults();
+      }
+      timer--;
+    }
+
+    const timerInterval = setInterval(updateTimer, 1000);
+
+    eyeToggle.addEventListener("click", () => {
+      showTimer = !showTimer;
+      timerElement.style.display = showTimer ? "block" : "none";
+      eyeToggle.textContent = showTimer ? "👁 Ocultar Tempo" : "👁 Mostrar Tempo";
+    });
+
+    function renderQuestion() {
+      const question = questions[currentQuestionIndex];
+      questionHeader.textContent = `Questão ${currentQuestionIndex + 1} de ${questions.length}`;
+      questionText.textContent = question.question;
+      optionsContainer.innerHTML = question.options.map(
+        (option, index) => `<button data-option="${String.fromCharCode(65 + index)}">${option}</button>`
+      ).join("");
+      const optionButtons = optionsContainer.querySelectorAll("button");
+      optionButtons.forEach((button) => {
+        button.addEventListener("click", () => selectOption(button));
+      });
+      updateQuestionSelector();
+    }
+
+    function selectOption(button) {
+      const selectedOption = button.dataset.option;
+      answers[currentQuestionIndex] = selectedOption;
+      optionsContainer.querySelectorAll("button").forEach((btn) => btn.classList.remove("selected"));
+      button.classList.add("selected");
+    }
+
+    function updateQuestionSelector() {
+      questionSelector.innerHTML = "";
+      questions.forEach((_, index) => {
+        const button = document.createElement("button");
+        button.textContent = index + 1;
+        button.classList.toggle("selected", index === currentQuestionIndex);
+        button.addEventListener("click", () => goToQuestion(index));
+        questionSelector.appendChild(button);
+      });
+    }
+
+    function goToQuestion(index) {
+      currentQuestionIndex = index;
+      renderQuestion();
+      updateNavigation();
+    }
+
+    function updateNavigation() {
+      previousButton.disabled = currentQuestionIndex === 0;
+    }
+
+    function showResults() {
+      resultContainer.style.display = "block";
+      let score = 0;
+      questions.forEach((question, index) => {
+        if (answers[index] === question.correct) {
+          score++;
+        }
+      });
+      scoreElement.textContent = `Você acertou ${score} de ${questions.length} questões.`;
+    }
+
+    nextButton.addEventListener("click", () => {
+      if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        renderQuestion();
+      } else if (Object.keys(answers).length === questions.length) {
+        showResults();
+      } else {
+        alert("Por favor, responda todas as questões antes de finalizar.");
+      }
+      updateNavigation();
+    });
+
+    previousButton.addEventListener("click", () => {
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        renderQuestion();
+        updateNavigation();
+      }
+    });
+
+    renderQuestion();
+    updateNavigation();
+  </script>
+  <script src="JS/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acessos, Logins e Senhas</title>
+  <style>
+    /* Reset e estilos básicos */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Cabeçalho */
+    header {
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #333dff;
+    }
+
+    .nav-links {
+      font-size: 1rem;
+      color: #333dff;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      font-size: 0.9rem;
+      color: #666;
+      margin: 20px 20px 10px;
+    }
+
+    /* Conteúdo principal */
+    .main-content {
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+      flex-basis: 100%;
+      text-align: center;
+    }
+    .section {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .section h2 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .section ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .section ul li {
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .section ul li a {
+      color: #000;
+      transition: color 0.3s ease;
+    }
+
+    .section ul li a:hover {
+      color: #333dff;
+    }
+
+    .link-all {
+      margin-top: 15px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #333dff;
+      display: inline-block;
+    }
+
+    /* Rodapé */
+    footer {
+      border-top: 1px solid #ddd;
+      text-align: center;
+      padding: 15px 20px;
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    footer a {
+      color: #666;
+    }
+
+    footer a:hover {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">Estude+</div>
+    <div class="nav-links">
+      <a href="#">Enviar uma solicitação</a> | <a href="#">Entrar</a>
+    </div>
+  </header>
+
+  <!-- Breadcrumb -->
+  <div class="breadcrumb">
+    Estude+ &gt; <strong>ACESSOS, LOGINS E SENHAS</strong>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <main class="main-content">
+    <h1>ACESSOS, LOGINS E SENHAS</h1>
+
+    <!-- Coluna da esquerda -->
+    <div class="column">
+      <!-- Seção de Acesso Grátis -->
+      <div class="section">
+        <h2>ACESSO GRÁTIS</h2>
+        <ul>
+          <li><a href="#">A Plataforma Repertório é paga?</a></li>
+          <li><a href="#">Como obter acesso grátis à Plataforma Repertório?</a></li>
+          <li><a href="#">O que está incluído no Plano Grátis?</a></li>
+        </ul>
+      </div>
+
+      <!-- Seção de Problemas de Acesso -->
+      <div class="section">
+        <h2>PROBLEMAS DE ACESSO</h2>
+        <ul>
+          <li><a href="#">Como faço para acessar a Plataforma pelo celular? Tem aplicativo?</a></li>
+          <li><a href="#">Ativei meu acesso PRO, mas não sei por onde começar</a></li>
+          <li><a href="#">Não consegui ter acesso aos benefícios PRO! O que fazer?</a></li>
+          <li><a href="#">Posso trocar os dados de cadastro?</a></li>
+          <li><a href="#">Errei meu e-mail no cadastro e agora?</a></li>
+          <li><a href="#">A Plataforma não carrega (erro 500 ou 400). O que fazer?</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Coluna da direita -->
+    <div class="column">
+      <!-- Seção de Acesso Pró -->
+      <div class="section">
+        <h2>ACESSO PRÓ</h2>
+        <ul>
+          <li><a href="#">Em quanto tempo liberam meu acesso PRO na Plataforma?</a></li>
+          <li><a href="#">Como assinar Repertório PRO com Cartão de Crédito?</a></li>
+          <li><a href="#">Paguei, mas ainda não chegou e-mail de acesso PRO</a></li>
+          <li><a href="#">Como saber se meus benefícios PRO estão ativos?</a></li>
+          <li><a href="#">Como sei se a minha compra foi aprovada?</a></li>
+          <li><a href="#">Como assinar Repertório PRO via PIX?</a></li>
+        </ul>
+        <a href="#" class="link-all">Ver todos os 7 artigos</a>
+      </div>
+
+      <!-- Seção de Senhas -->
+      <div class="section">
+        <h2>SENHAS</h2>
+        <ul>
+          <li><a href="#">Não recebi meu login e senha, como faço pra entrar?</a></li>
+          <li><a href="#">Não consegui criar uma senha, o que fazer?</a></li>
+          <li><a href="#">Esqueci minha senha e agora?</a></li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    Estude+ | <a href="#">Powered by Zendesk</a>
+  </footer>
+</body>
+</html>

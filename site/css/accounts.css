@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #000000, #1c1681);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/*------------ Login container ------------*/
+
+.box-area {
+    border: 3px solid #add8e6; /* Borda azul claro */
+    box-shadow: 0 0 10px 5px rgba(173, 216, 230, 0.7); /* Sombreamento azul claro */
+}
+
+
+.box-area {
+    width: 100%;
+    max-width: 930px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 30px;
+    border: 3px solid #add8e6; /* Borda azul claro */
+    box-shadow: 0 0 10px 5px rgba(173, 216, 230, 0.7); /* Sombreamento azul claro */
+    transition: box-shadow 0.5s ease-in-out; /* Transição suave */
+}
+
+.box-area:hover {
+    box-shadow: 0 0 30px 15px rgba(30, 144, 255, 1), 0 0 60px 30px rgba(30, 144, 255, 0.8), 0 0 90px 45px rgba(30, 144, 255, 0.6); /* Intensifica o efeito ao passar o mouse */
+}
+
+/*------------ Right box ------------*/
+
+.right-box {
+    padding: 40px 30px 40px 40px;
+}
+
+/* Efeito de transição quase instantâneo */
+input[type="checkbox"] {
+    transition: none;
+}
+
+/*------------ Custom Placeholder ------------*/
+
+::placeholder {
+    font-size: 16px;
+}
+
+.rounded-4 {
+    border-radius: 20px;
+}
+
+.rounded-5 {
+    border-radius: 30px;
+}
+
+/* Margem geral para evitar que a div fique grudada */
+.container {
+    margin: 20px auto;
+    max-width: 900px;
+    padding: 20px;
+}
+
+/* Estilo comum para os botões "Sign In with Google" e "Sign In with Apple" */
+.btn-light, .btn-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 20px;
+    width: 100%;
+    gap: 15px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Ajuste das imagens dentro dos botões */
+.btn-light img, .btn-primary img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* Alinha corretamente o texto ao lado das imagens no botão "Sign In with Google" */
+.btn-light small, .btn-primary small {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0;
+    font-size: 16px;
+}
+
+/* Ajuste para o botão "Sign In with Apple" */
+.apple {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ajuste para a logo da Apple */
+.apple-logo-container {
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ajuste para o texto */
+.apple-text {
+    font-size: 16px;
+    position: relative;
+    left: -9px;
+    display: inline-block;
+}
+
+/*------------ For small screens------------*/
+
+/* Para dispositivos ainda menores, como celulares */
+@media only screen and (max-width: 480px) {
+    .box-area {
+        width: 100%;
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .btn-light img, .btn-primary img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .btn-light small, .btn-primary small {
+        font-size: 14px;
+    }
+}
+
+#email-error, #password-error, #password-before-email-error {
+    font-size: 0.9rem;
+}
+
+#password-before-email-error {
+    font-size: 1rem;
+    color: red;
+    display: none;
+    /* Remover o negrito */
+    font-weight: normal;
+}
+
+.bx-eye {
+    color: green; /* Cor para o ícone de olho aberto */
+}
+
+.bx-eye-slash {
+    color: red; /* Cor para o ícone de olho fechado */
+}
+
+@media only screen and (max-width: 320px) {
+    .container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .box-area {
+        padding: 10px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .btn-light img, .btn-primary img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .btn-light small, .btn-primary small {
+        font-size: 14px;
+    }
+}

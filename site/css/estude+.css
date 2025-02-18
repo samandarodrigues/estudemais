@@ -1,0 +1,1271 @@
+/*Menu Horizontal*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap'); /* Importa a fonte 'Inter' do Google Fonts com diferentes pesos. */
+
+* {
+    padding: 0; /* Remove o preenchimento padrão de todos os elementos. */
+    margin: 0; /* Remove a margem padrão de todos os elementos. */
+    box-sizing: border-box; /* Garante que largura e altura incluam bordas e preenchimento. */
+    font-family: 'Inter', sans-serif; /* Define a fonte padrão para todos os elementos. */
+}
+
+.body{
+    background-color: white;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: white; /* Define o fundo branco do cabeçalho. */
+    box-shadow: 0px 3px 10px #16bce6 ; /* Adiciona uma sombra ao cabeçalho. */
+}
+
+.nav-bar {
+    display: flex; /* Cria um layout flexível. */
+    justify-content: space-between; /* Espaça os elementos igualmente nas extremidades. */
+    align-items: center; /* Alinha os itens verticalmente ao centro. */
+    padding: 1.5rem 5rem; /* Adiciona espaçamento interno ao topo/inferior e laterais. */
+
+}
+.overlay{
+    background-color: #d7d7d7;
+    padding: 1rem 3rem;
+    margin-bottom: 15px;
+
+}
+.overlay h3{
+    color: black;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.logo {
+    display: flex; /* Cria um layout flexível para o logo. */
+    align-items: center; /* Alinha verticalmente os elementos do logo. */
+}
+
+.logo h1 {
+    color: #000; /* Define a cor do texto do logo. */
+}
+
+.nav-list {
+    display: flex; /* Cria um layout flexível para a lista de navegação. */
+    align-items: center; /* Alinha os itens verticalmente ao centro. */
+    margin-left: auto; /* Empurra a lista de navegação para o lado direito. */
+}
+
+.nav-list ul {
+    display: flex; /* Define a lista como flexível. */
+    justify-content: flex-end; /* Alinha os itens ao final do contêiner. */
+    list-style: none; /* Remove os marcadores da lista. */
+    width: 100%; /* Define a largura total da lista. */
+}
+
+.nav-item {
+    margin: 0 20px; /* Adiciona margem horizontal entre os itens. */
+}
+
+.nav-link {
+    text-decoration: none; /* Remove o sublinhado dos links. */
+    font-size: 1.15rem; /* Define o tamanho da fonte dos links. */
+    color: #000; /* Define a cor dos links. */
+    font-weight: 400; /* Define o peso da fonte. */
+}
+
+
+.login-button {
+    display: flex; /* Define o layout flexível para os botões. */
+    align-items: center; /* Alinha verticalmente os botões. */
+    gap: 10px; /* Espaça os botões horizontalmente. */
+}
+.login-button button {
+    border: 2px solid #000; /* Define uma borda azul ao botão. */
+    padding: 10px 25px; /* Adiciona espaçamento interno ao botão. */
+    border-radius: 5px; /* Arredonda as bordas do botão. */
+    color: #000; /* Define a cor do texto do botão. */
+    background-color: white; /* Define o fundo branco do botão. */
+}
+
+.login-button button a {
+    text-decoration: none; /* Remove o sublinhado do link dentro do botão. */
+    color: #000; /* Define a cor do link dentro do botão. */
+    font-weight: 500; /* Define um peso de fonte mais grosso. */
+    font-size: 1rem; /* Define o tamanho da fonte do link. */
+}
+
+.mobile-menu-icon {
+    display: none; /* Oculta o ícone do menu em telas maiores. */
+}
+
+/* Estilo para o menu mobile */
+.mobile-menu {
+    top: 100%; /* Logo abaixo do botão de menu (hambúrguer). */
+    right: 10px; /* Alinha o menu à borda direita do botão. */
+    background-color: gainsboro; /* Define a cor de fundo do menu. */
+    width: auto; /* Ajusta a largura para o tamanho do conteúdo ou conforme necessário. */
+    display: none; /* Inicialmente, o menu está oculto. */
+    flex-direction: column; /* Organiza os itens do menu em coluna. */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adiciona sombra ao menu. */
+    z-index: 10; /* Garante que o menu fique acima de outros elementos. */
+    padding: 1rem; /* Adiciona espaçamento interno. */
+    border-radius: 5px; /* Arredonda os cantos do menu. */
+}
+
+.mobile-menu.open {
+    display: flex; /* Mostra o menu ao adicionar a classe 'open' */
+    
+}
+
+/* Ícone do menu mobile */
+.mobile-menu-icon {
+    display: none; /* Esconde em telas grandes */
+
+}
+
+.mobile-menu-icon button {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Ajustes para telas menores */
+@media screen and (max-width: 730px) {
+    .nav-list {
+        display: none; /* Oculta o menu padrão */
+    }
+    .login-button {
+        display: none; /* Oculta os botões padrão */
+    }
+    .mobile-menu-icon {
+        display: block; /* Mostra o ícone */
+    }
+}
+
+.btn-contato {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.btn-contato button {
+    border: 2px solid #0187a7;
+    padding: 20px 65px;
+    border-radius: 15px;
+    color: #0187a7;
+    background-color: white;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+}
+
+
+.btn-contato button:hover {
+    box-shadow: 0px 0px 8px #16bce6 ;
+}
+
+
+/* Defina a imagem na direita metade da tela */
+
+
+.Topo-do-site {
+  display: flex;
+  max-width: 1300px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  background-color: #16bce6;
+  padding: 20px;
+  color: #fff;
+  font-weight: 500;
+  border: 2px solid #16bce6; /* Ajuste para a borda visível */
+  border-radius: 20px;
+  margin-bottom: 20px;
+  position: relative; /* Necessário para o posicionamento absoluto da imagem */
+  min-height: 600px; /* Aumentei a altura mínima para 400px */
+  overflow: hidden; /* Garante que qualquer conteúdo que ultrapasse o container seja escondido */
+}
+
+.Topo-do-site img {
+  position: absolute; /* Permite o posicionamento fora do fluxo do layout */
+  bottom: 0;
+  right: 0;
+  height: auto;
+  max-width: 100%; /* Garante que a imagem não ultrapasse o tamanho do container */
+  max-height: 100%; /* Garante que a altura da imagem não ultrapasse a altura do container */
+  object-fit: contain; /* Faz a imagem ajustar ao espaço disponível sem deformar */
+  border-radius: 0 0 20px 0; /* Combina com o arredondamento da borda inferior do container */
+}
+
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 40px;
+}
+
+.txt-topo-site {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 65%;
+}
+
+.txt-topo-site h1 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 2.6rem;
+    color: #000;
+    font-weight: 700;
+}
+
+.txt-topo-site p { 
+    font-size: 1.2rem;
+    color: #000;
+}
+
+
+
+/* Ajustes para telas menores */
+@media screen and (max-width: 930px) {
+    .Topo-do-site h1{
+        font-size: 42px;
+        line-height: 40px;
+        color: black;
+    }
+    .flex{
+        flex-direction: column-reverse;
+    }
+
+    .Topo-do-site .txt-topo-site h1 span{
+        color: #16bce6 ;
+    }
+    .Topo-do-site .txt-topo-site p{
+        color: black;
+        margin: 40px 0;
+        font-size: 1.2rem;
+
+    }
+    .Topo-do-site .img-topo-site img{
+        position: relative;
+        animation: flutuar 3s ease-in-out infinite;
+    }
+    @keyframes flutuar {
+        0% {
+            top: 0;
+        }
+        100% {
+            top: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .overlay h3{
+        font-size: 1rem;
+    }
+    .Topo-do-site h1{
+        font-size: 35px;
+        line-height: 40px;
+        color: black;
+    }
+    .Topo-do-site .txt-topo-site h1 span{
+        color: #16bce6 ;
+    }
+    .Topo-do-site .txt-topo-site p{
+        color: black;
+        margin: 40px 0;
+        font-size: 1rem;
+} 
+}
+@media screen and (max-width: 320px) {
+    .Topo-do-site h1{
+        font-size:20px;
+        line-height: 20px;
+        color: black;
+    }
+    .Topo-do-site .txt-topo-site h1 span{
+        color: #16bce6 ;
+    }
+    .Topo-do-site .txt-topo-site p{
+        color: black;
+        margin: 20px 0;
+        font-size: .8rem;
+} 
+}
+
+
+
+
+/* About Us Section */
+.about-us {
+    background-color: #16bce6 ; /* Define a cor de fundo da seção "Sobre Nós". */
+    padding: 40px 0; /* Adiciona preenchimento interno ao topo e inferior. */
+    text-align: center; /* Centraliza o texto. */
+
+}
+
+.containerCHECK {
+    max-width: 1300px; /* Define a largura máxima do contêiner. */
+    margin: 0 auto; /* Centraliza horizontalmente o contêiner. */
+    padding: 0 20px; /* Adiciona preenchimento interno lateral. */
+    display: flex; /* Define o layout como flexível. */
+    flex-direction: column; /* Alinha os itens em uma coluna. */
+    align-items: center; /* Centraliza os itens horizontalmente. */
+    text-align: center;
+    border: #000;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.about-us h2 {
+    font-size: 2rem; /* Define o tamanho da fonte do título. */
+    margin-bottom: 20px; /* Adiciona espaçamento inferior ao título. */
+    color: #16bce6 ; 
+}
+
+.containerCHECK {
+    max-width: auto;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #000;
+    margin-bottom: 20px;
+
+}
+
+.title {
+    font-size: 1.8em;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.title span {
+    color: #16bce6 ;
+    font-weight: bold;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.carde {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1 1 200px;
+    max-width: 300px;
+    text-align: center;
+}
+.carde i {
+    color: #000;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.carde p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.highlight {
+    color: #16bce6 ;
+    font-weight: bold;
+}
+.section-focus {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  gap: 20px;
+  width: 95%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex-direction: row-reverse; /* Inverte a posição da imagem e do texto */
+}
+
+
+
+.section-focus .image {
+  max-width: 100%;
+  height: auto;
+}
+
+.section-focus .text {
+  flex: 1 1 300px;
+  padding: 30px;
+}
+
+.section-focus .text h2 {
+  font-size: 1.8em;
+  color: #333;
+}
+
+.section-focus .text h2 span {
+  color: #16bce6;
+  font-weight: bold;
+}
+
+.focus-list {
+    list-style: none;
+    padding: 20PX;
+    margin: 20px 0 0;
+}
+
+.focus-list li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1em;
+}
+
+.focus-list li i {
+    font-size: 1.2em;
+    color: #16bce6 ;
+    margin-right: 10px;
+}
+
+.focus-list li.red i {
+    color: #ff4d4d;
+}
+
+.foooter {
+    background-color: #16bce6 ;
+    color: #fff;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.foooter .social {
+    color: white;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.foooter .legal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+}
+
+.foooter .legal p {
+    text-align: center;
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.foooter .legal p {
+    text-align: center;
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.foooter .social a {
+    color: white; 
+    font-size: 1.5em; 
+    margin: 0 10px;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s ease;
+}
+
+.foooter .social a:hover {
+    color: #ccc; 
+}
+
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.5em;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 10px; 
+        justify-items: center;
+
+    }
+    .cards .carde {
+        width: 100%; 
+    }
+    #card-5 {
+        grid-column: 1/-1;
+        justify-self: center;
+    }
+    .section-focus {
+        flex-direction: column;
+    }
+    .footer .legal {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+.containerb {
+      background-color: black;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 1300px; /* Ajuste a largura máxima */
+      width: calc(100% - 20px);
+      border: #16bce6;
+      border-radius: 15px;
+
+    }
+
+
+
+.tns-nav button {
+  width: 10px;
+  height: 10px;
+  background-color: #16bce6; /* Cor das bolinhas */
+  border-radius: 50%; /* Fazendo as bolinhas redondas */
+  border: none;
+  opacity: 0.5;  /* Opacidade inicial */
+  transition: opacity 0.3s ease; /* Suaviza a transição */
+}
+
+.tns-nav button.tns-nav-active {
+  opacity: 1; /* Aumenta a opacidade quando o item está ativo */
+  background-color: #0077cc; /* Cor para a bolinha ativa */
+}
+
+  
+
+    .containerb h1 {
+      padding: 20px;
+      color: white;
+      margin-bottom: 10px;
+      margin-top: 5px;
+    }
+    .containerb h3{
+      padding: 20px;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .my-slider {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    
+
+    }
+
+    .container-cards {
+      display: flex;
+      gap: 20px;
+      padding: 20px;
+      overflow-x: auto;
+      overflow: hidden;
+      scroll-behavior: smooth;
+      justify-content: center;
+    }/*centralizando os cards*/
+
+    .container-cards::-webkit-scrollbar {
+      display: none;
+    }
+
+    .course-card {
+      background-color: white;
+      border: 2px solid #16bce6;
+      border-radius: 10px;
+      padding: 20px;
+      max-width: 340px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      position: relative;
+      text-align: center;
+      margin: 0 auto;
+
+
+    }
+
+    .badge-discount {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background-color: #16bce6;
+      color: white;
+      font-size: 0.9rem;
+      font-weight: bold;
+      padding: 8px;
+      border-radius: 50%;
+    }
+
+    .course-title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #000;
+      margin-bottom: 10px;
+      display: inline-block;
+      border: 3px solid #000;
+      border-radius: 10px;
+      padding: 5px 10px;
+      text-shadow: 1px 1px 0 #16bce6;
+      margin-top: 0;
+    }
+
+    .badge {
+      border: 3px solid #19a6ca;
+      text-shadow: 1px 1px 0 #16bce6;
+      display: inline-block;
+      background-color: #16bce6;
+      color: white;
+      font-size: 0.9rem;
+      font-weight: bold;
+      padding: 5px 10px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+    }
+
+    .features, .details-list {
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      color: #000;
+    }
+    .features li{
+      border: 2px solid #16bce6;
+      border-radius: 10px;
+      padding: 2px 5px;
+      display: block;
+    }
+
+    .features li, .details-list li {
+      list-style: none;
+      margin: 10px 0;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .features li::before, .details-list li::before {
+      content: "✔";
+      color: #1ea1ff;
+      margin-right: 10px;
+    }
+
+    .details-box {
+      display: none;
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #16bce6;
+      border: 1px solid white;
+      border-radius: 5px;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .details-box.active {
+      display: block;
+    }
+
+    .price-section {
+      text-align: center;
+      margin-top: 15px;
+      color: #c8e2ff;
+    }
+
+    .price-section s {
+      color: #c8e2ff;
+      font-size: 1rem;
+    }
+
+    .price {
+      font-size: 1.8rem;
+      color: #1ea1ff;
+      font-weight: bold;
+      margin: 5px 0;
+    }
+
+    .offer-timer {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 15px 0;
+    }
+
+    .offer-timer div {
+      background: violet;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-size: 1rem;
+      color: #ffffff;
+    }
+
+    .button {
+      display: block;
+      width: 90%;
+      text-align: center;
+      background-color: #0077cc;
+      color: white;
+      text-decoration: none;
+      padding: 10px;
+      border-radius: 5px;
+      font-size: 1rem;
+      font-weight: bold;
+      margin: auto;
+    }
+
+    .button:hover {
+      background-color: #16bce6;
+    }
+
+    @media screen and (max-width: 720px) {
+        .offer-timer div{
+            gap: 5px;
+            padding: 4px 9px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            color: #ffffff;
+        }
+    }
+
+
+
+
+
+    /*menu responsivo*/
+/* Responsive Styles */
+@media screen and (max-width: 1024px) {
+    .nav-bar {
+        padding: 1.5rem 3rem;
+    }
+    .nav-item {
+        margin: 0 15px;
+    }
+    .main-section .txt h1 {
+        font-size: 1.8rem;
+    }
+    .main-section .txt p {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    .nav-bar {
+        padding: 1.5rem;
+    }
+    .nav-list {
+        display: none;
+    }
+    .login-button {
+        display: none;
+    }
+    .mobile-menu-icon {
+        display: block;
+    }
+    .mobile-menu ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        padding-bottom: 1rem;
+    }
+    .mobile-menu .nav-item {
+        display: block;
+        padding: 0.6rem 0;
+    }
+    .mobile-menu .login-button {
+        display: block;
+        padding: 1rem 2rem;
+    }
+    .mobile-menu .login-button button {
+        width: 100%;
+    }
+    .hover-sub{
+        margin-bottom: 10px;
+    }
+    
+    .card {
+        width: 100%;
+    }
+
+        
+}
+
+ @media screen and (max-width: 320px){
+    .main-section {
+        height: auto;
+        padding: 20px 10px;
+    }
+    .main-section .txt h1 {
+        font-size: 1.5rem;
+    }
+    .main-section .txt p {
+        font-size: 0.8rem;
+    }
+    .about-us .columns {
+        grid-template-columns: 1fr;
+    }
+    .about-us .column {
+        padding: 15px;
+    }
+}
+
+
+/*Perguntas Frequentes*/
+.duvidas{
+    background-color: #fff;
+    padding: 40px 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.containerMain{
+    margin: 100px 40px 0;
+    max-width: 1100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+
+}
+.containerMain h1{
+    color: #fff;
+    font-size: 2.4rem;
+    background: linear-gradient(145deg, #000000, #595959);
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.containerMain .inicioDuvidas{
+    position: relative;
+    background-color: #fff;
+    padding: 0 20px 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border-radius: 15px;
+    
+}
+.containerMain input{
+    appearance: none;
+    max-width: 1100px;
+}
+.containerMain .inicioDuvidas label{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.containerMain .inicioDuvidas label::after{
+    content: '↓';
+    position: absolute;
+    right: 24px;
+    color: black;
+    transition: transform 1s;
+}
+.containerMain .inicioDuvidas input:checked + label::after{
+    transform: rotate(180deg);
+    color: black;
+}
+.containerMain .inicioDuvidas label h2{
+    width: 40px;
+    height: 40px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+.containerMain .inicioDuvidas label h3{
+    position: relative;
+    font-weight: 500;
+    color: black;
+    z-index: 10;
+}
+.containerMain .inicioDuvidas .content{
+    overflow: hidden;
+    max-height: 0;
+    transition: 1s;
+    
+}
+.containerMain .inicioDuvidas input:checked ~ .content{
+    max-height: 100vh;
+}
+.containerMain .inicioDuvidas .content p{
+    padding: 10px 0;
+    position: relative;
+    color: #000;
+    z-index: 10;
+}
+@media screen and (max-width: 320px){
+    .containerMain input{
+        width: 500px;
+    }
+    .containerMain .inicioDuvidas label h3{
+        font-size: 1rem;
+    }
+    .containerMain .inicioDuvidas label h2{
+        font-size: 1rem;
+    }
+    
+    .containerMain{
+        margin: 100px 10px 0;
+    }
+    .containerMain input{
+        width: 100%;
+    }
+    .containerMain .inicioDuvidas label h3{
+        font-size: 0.8rem;
+    }
+    .containerMain .inicioDuvidas label h2{
+        font-size: 0.8rem;
+}
+    
+}
+
+
+
+/* Quem somos */
+.container-swiper{
+    background-color: black;
+    max-width: 1300px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: #16bce6  2px solid;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+.container-swiper h2{
+    color: #16bce6 ;
+    font-size: 2.4rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.container-swiper h3{
+    color: #16bce6 ;
+    font-size: 1.4rem;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.slider-wrapper {
+    overflow: hidden;
+    max-width: 75%;
+    margin: 0 auto 55px;
+    padding: 0 15px;
+
+}
+  
+
+  .card-list .card-item {
+    height: auto;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    background: #fff;
+    border: 2px solid #16bce6 ;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+
+
+  }
+
+  
+  .card-list .card-item .user-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 40px;
+    border: 4px solid #16bce6 ;
+    padding: 4px;
+  }
+  .card-list .card-item .user-name{
+    font-size: 26px;
+    color: #000;
+    font-weight: 500;
+  }
+  
+  .card-list .card-item .user-profession {
+    font-size: 16px;
+    color: #f5f5f5;
+    font-weight: 500;
+    margin: 14px 0 40px;
+    box-shadow: #f5f5f5;
+
+
+}
+  
+  
+  .card-list .card-item .message-button {
+    font-size: 16px;
+    padding: 10px 35px;
+    color: #fff;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    background: #16bce6 ;
+    border: 2px solid transparent;
+    transition: 0.5s;
+  }
+  
+  .card-list .card-item .message-button:hover {
+    background: #ffffff1a;
+    border: 2px solid #fff;
+    color: #fff;
+  }
+  .hidden-message {
+    font-size: 16px;
+    /*descer o texto*/
+    margin-top: 20px;
+    display: none;
+  }
+  
+  .card-list .card-item .hidden-message.active {
+    display: block;
+  }
+  
+  .slider-wrapper .swiper-pagination-bullet {
+    background: #ccc;
+    height: 13px;
+    width: 13px;
+    opacity: 0.5;
+  }
+  
+  .slider-wrapper .swiper-pagination-bullet-active {
+    opacity: 1;
+
+
+  }
+  
+  .slider-wrapper .swiper-slide-button {
+    color: #16bce6 ;
+    margin-top: -20px;
+
+    transition: 0.5s;
+  }
+  
+  .slider-wrapper .swiper-slide-button:hover {
+    color: #0077cc;
+  }
+  @media screen and (max-width: 500px) {
+    .slider-wrapper {
+      margin: 0 20px 40px;
+      padding: 0 30px;
+    }
+    .card-list .card-item {
+      padding: 20px;
+    }
+    .card-list .card-item .user-image {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+    .card-list .card-item .user-name {
+      font-size: 18px;
+  }
+    .card-list .card-item .user-profession {
+      font-size: 14px;
+      margin: 10px 0 20px;
+    }
+    .card-list .card-item .message-button {
+      font-size: 10px;
+      padding: 6px 20px;
+    }
+    .card-list .card-item .hidden-message {
+      font-size: 14px;
+      margin-top: 10px;
+
+    }
+    .slider-wrapper .swiper-pagination-bullet {
+      height: 10px;
+      width: 10px;  
+
+    }
+    
+    }
+  @media screen and (max-width: 320px) {
+    .slider-wrapper {
+      margin: 0 20px 40px;
+      padding: 0 30px;
+    }
+    .card-list .card-item {
+      padding: 20px;
+    }
+    .card-list .card-item .user-image {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px;
+    }
+    .card-list .card-item .user-name {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .card-list .card-item .user-profession {
+      font-size: 14px;
+      margin: 10px 0 20px;
+    }
+    .card-list .card-item .message-button {
+      font-size: 10px;
+      padding: 6px 20px;
+    }
+    .card-list .card-item .hidden-message {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    .slider-wrapper .swiper-pagination-bullet {
+      height: 10px;
+      width: 10px;
+    }
+    .slider-wrapper .swiper-slide-button {
+      font-size: 14px;
+      margin-top: -10px;
+    }
+
+  }
+
+  @media screen and (max-width: 370px) {
+    body {
+        font-size: 12px; /* Ajuste do tamanho da fonte */
+    }
+    
+    .nav-bar {
+        padding: 1rem; /* Redução do espaçamento interno */
+    }
+    
+    .nav-item {
+        margin: 0 10px; /* Redução da margem entre itens */
+    }
+    
+    .btn-contato button {
+        padding: 10px 20px; /* Redução do tamanho dos botões */
+        font-size: 0.8rem; /* Redução do tamanho da fonte dos botões */
+    }
+    
+    .Topo-do-site h1 {
+        font-size: 1.5rem; /* Redução do tamanho do título */
+    }
+    
+    .carde {
+        max-width: 280px; /* Ajuste do tamanho máximo dos cartões */
+        padding: 15px; /* Redução do preenchimento interno */
+    }
+    
+    .containerMain h1 {
+        font-size: 1.8rem; /* Ajuste do tamanho da fonte do título */
+    }
+    
+    .containerMain .inicioDuvidas label h3 {
+        font-size: 0.7rem; /* Ajuste do tamanho da fonte das perguntas */
+    }
+    
+    .containerb, .container-swiper {
+        padding: 10px; /* Redução do espaçamento interno */
+    }
+    .course-card {
+        padding: 15px; /* Redução do preenchimento interno */
+        margin: 10px; /* Redução da margem */
+    }
+    
+      
+        .containerb h1, .containerb h3 {
+          font-size: 1.2rem; /* Reduz o tamanho do texto */
+          padding: 10px;
+        }
+      
+        .course-card {
+          padding: 10px;
+          max-width: 100%; /* Faz os cards ocuparem a largura total */
+          margin: 10px 0;
+        }
+      
+        .course-title {
+          font-size: 1.5rem; /* Reduz o tamanho do título */
+          padding: 5px;
+        }
+      
+        .features li {
+          font-size: 0.9rem; /* Ajusta o tamanho dos itens */
+          padding: 5px;
+        }
+      
+        .details-box {
+          font-size: 0.8rem; /* Ajusta o tamanho do texto dos detalhes */
+          padding: 5px;
+        }
+      
+        .price-section .price {
+          font-size: 1.5rem; /* Ajusta o tamanho do preço */
+        }
+      
+        .offer-timer div {
+          padding: 5px 10px; /* Ajusta os contêineres do timer */
+          font-size: 0.8rem;
+        }
+      
+        .button {
+          font-size: 0.9rem; /* Reduz o tamanho do botão */
+          padding: 8px;
+        }
+      }
+      
+@media screen and (max-width: 320px) {
+    .course-card {
+        padding: 10px; /* Redução do preenchimento interno */
+        margin: 5px; /* Redução da margem */
+    }
+    
+      
+        .containerb h1, .containerb h3 {
+          font-size: 1rem; /* Reduz o tamanho do texto */
+          padding: 8px;
+        }
+      
+        .course-card {
+          padding: 8px;
+          max-width: 100%; /* Faz os cards ocuparem a largura total */
+          margin: 8px 0;
+        }
+      
+        .course-title {
+          font-size: 1.2rem; /* Reduz o tamanho do título */
+          padding: 4px;
+        }
+      
+        .features li {
+          font-size: 0.8rem; /* Ajusta o tamanho dos itens */
+          padding: 4px;
+        }
+      
+        .details-box {
+          font-size: 0.7rem; /* Ajusta o tamanho do texto dos detalhes */
+          padding: 4px;
+        }
+      
+        .price-section .price {
+          font-size: 1.2rem; /* Ajusta o tamanho do preço */
+        }
+      
+        .offer-timer div {
+          padding: 4px 8px; /* Ajusta os contêineres do timer */
+          font-size: 0.7rem;
+        }
+      
+        .button {
+          font-size: 0.8rem; /* Reduz o tamanho do botão */
+          padding: 8px;
+        }
+      }
