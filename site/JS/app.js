@@ -211,7 +211,6 @@ document.addEventListener('DOMContentLoaded', () => {
           planoIndexElemento.textContent = "Nenhum plano selecionado";
       }
   });
-
   document.addEventListener("DOMContentLoaded", function () {
     // Recuperando o nome completo salvo no localStorage
     const nomeSalvo = localStorage.getItem('nomeCompleto');
@@ -225,14 +224,16 @@ document.addEventListener('DOMContentLoaded', () => {
       // O sobrenome será o restante das palavras (se existirem)
       const sobrenome = partesNome.slice(1).join(' ');  // Junta todos os sobrenomes, se houver mais de um
     
-
+      // Atualiza os campos com o nome e sobrenome
       document.getElementById("first-name").value = nome;
       document.getElementById("last-name").value = sobrenome;
-    }
-  });
-  
 
-  window.addEventListener('load', function() {
+      // Utiliza o nome como ID do usuário
+      document.getElementById("user-id").innerText = nome; // Exibe o nome como ID
+    }
+});
+
+window.addEventListener('load', function() {
     const emailSalvo = localStorage.getItem('email');
     if (emailSalvo) {
         document.getElementById('email-display').value = emailSalvo;
@@ -241,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', function () {
     const avatar = document.getElementById('avatar');
-    const userAvatar = document.getElementById('USUARIO');
+    const userAvatar = document.getElementById('USUARIO'); // Avatar do usuário
     const uploadInput = document.getElementById('upload');
     const saveButton = document.querySelector('.save');
 
@@ -352,5 +353,37 @@ document.addEventListener("DOMContentLoaded", function () {
         const nomeCompleto = `${firstNameInput.value} ${lastNameInput.value}`.trim();
         localStorage.setItem("nomeCompleto", nomeCompleto);
         alert("Dados salvos com sucesso!");
+
+        // Atualiza o ID do usuário com o nome
+        document.getElementById("user-id").innerText = firstNameInput.value;
     });
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Recupera o nome do usuário e o avatar salvos no localStorage
+    const nomeSalvo = localStorage.getItem('nomeCompleto');
+    const avatarSalvo = localStorage.getItem('avatarImage');
+
+    // Se o nome estiver salvo, exibe-o
+    if (nomeSalvo) {
+        const partesNome = nomeSalvo.split(' ');
+        const nome = partesNome[0];
+        const sobrenome = partesNome.slice(1).join(' ');
+
+        // Exibe o nome no campo de ID do usuário
+        document.getElementById('USUARIO').textContent = nome; // Coloca o nome do usuário na interface
+    }
+
+    // Se a imagem do avatar estiver salva, substitui o conteúdo da div com a imagem
+    if (avatarSalvo) {
+        const usuarioAvatar = document.getElementById('usuario-avatar');
+        usuarioAvatar.style.backgroundImage = `url(${avatarSalvo})`; // Define a imagem como background
+        usuarioAvatar.style.backgroundSize = "cover"; // Garantir que a imagem cubra o espaço
+        usuarioAvatar.style.backgroundPosition = "center"; // Centralizar a imagem
+        usuarioAvatar.textContent = ''; // Limpa o texto "LG", pois será a imagem
+    } else {
+        // Se não houver imagem salva, deixa o texto "LG" visível
+        document.getElementById('usuario-avatar').textContent = 'LG';
+    }
 });
