@@ -316,3 +316,42 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const firstNameInput = document.getElementById("first-name");
+    const lastNameInput = document.getElementById("last-name");
+    const emailInput = document.getElementById("email-display");
+    const saveButton = document.querySelector(".save");
+
+    // Carregar dados salvos
+    const nomeSalvo = localStorage.getItem("nomeCompleto");
+    const emailSalvo = localStorage.getItem("email");
+
+    if (nomeSalvo) {
+        const partesNome = nomeSalvo.split(" ");
+        firstNameInput.value = partesNome[0] || "";
+        lastNameInput.value = partesNome.slice(1).join(" ") || "";
+    }
+
+    if (emailSalvo) {
+        emailInput.value = emailSalvo;
+    }
+
+    // Tornar os campos editáveis
+    firstNameInput.removeAttribute("readonly");
+    lastNameInput.removeAttribute("readonly");
+
+    // Exibir mensagem ao tentar modificar o email
+    emailInput.addEventListener("focus", function () {
+        alert("O e-mail não pode ser modificado.");
+        emailInput.blur(); // Remove o foco do campo
+    });
+
+    // Salvar alterações
+    saveButton.addEventListener("click", function (event) {
+        event.preventDefault();
+        const nomeCompleto = `${firstNameInput.value} ${lastNameInput.value}`.trim();
+        localStorage.setItem("nomeCompleto", nomeCompleto);
+        alert("Dados salvos com sucesso!");
+    });
+});
+
