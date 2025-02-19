@@ -5,6 +5,7 @@ const emailError = document.getElementById('email-error');
 const passwordError = document.getElementById('password-error');
 const passwordBeforeEmailError = document.getElementById('password-before-email-error');
 const loginBtn = document.getElementById('login-btn');
+const loginLink = document.getElementById('login-link');  // Link de login
 
 // Função para validar o email
 function validateEmail() {
@@ -70,7 +71,7 @@ function toggleButtonState() {
 loginBtn.addEventListener('click', (event) => {
     event.preventDefault(); // Previne o envio do formulário
     if (!loginBtn.disabled) {
-        window.location.href = '../index1.html'; // Redireciona para a página index1.html
+        loginLink.click(); // Simula o clique no link
     }
 });
 
