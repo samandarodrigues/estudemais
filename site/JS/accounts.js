@@ -70,7 +70,7 @@ function toggleButtonState() {
 loginBtn.addEventListener('click', (event) => {
     event.preventDefault(); // Previne o envio do formulário
     if (!loginBtn.disabled) {
-        window.location.href = '/site/index1.html'; // Redireciona para a página index1.html
+        window.location.href = '../index1.html'; // Redireciona para a página index1.html
     }
 });
 
