@@ -13,6 +13,7 @@ function validateEmail() {
 
     if (emailRegex.test(email)) {
         emailError.classList.add('d-none');
+        localStorage.setItem('email', email); // Salva no localStorage
     } else {
         emailError.classList.remove('d-none');
     }
@@ -65,6 +66,14 @@ function toggleButtonState() {
     }
 }
 
+// Evento de clique no botão de login (apenas se estiver habilitado)
+loginBtn.addEventListener('click', (event) => {
+    event.preventDefault(); // Previne o envio do formulário
+    if (!loginBtn.disabled) {
+        window.location.href = 'index1.html'; // Redireciona para a página index1.html
+    }
+});
+
 // Toggle de visibilidade da senha
 togglePasswordVisibility.addEventListener('click', () => {
     // Alterna entre 'password' e 'text' para mostrar ou ocultar a senha
@@ -84,18 +93,5 @@ togglePasswordVisibility.addEventListener('click', () => {
     }
 });
 
-    // Função para validar o email
-    function validateEmail() {
-        const email = emailInput.value;
-        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\.[a-zA-Z]{2,})+$/;
-
-        if (emailRegex.test(email)) {
-            emailError.classList.add('d-none');
-            localStorage.setItem('email', email); // Salva no localStorage
-        } else {
-            emailError.classList.remove('d-none');
-        }
-    }
-
-    // Evento para salvar email sempre que perder o foco
-    emailInput.addEventListener('blur', validateEmail);
+// Função para validar o email ao perder o foco
+emailInput.addEventListener('blur', validateEmail);
